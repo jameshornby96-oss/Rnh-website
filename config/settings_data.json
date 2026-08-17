@@ -16,7 +16,27 @@
     "border": "#c9c4b8",
     "muted": "#68655d",
     "type_scale": "standard",
-    "footer_copy": "Independent market research, macroeconomic insight, and active trading experience."
+    "footer_copy": "Independent market research, macroeconomic insight, and active trading experience.",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "cta_label": "Join R&H Intelligence",
+          "cta_link": ""
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "email": "intelligence@rhcapital.co.uk"
+        }
+      },
+      "cart-drawer": {
+        "type": "cart-drawer",
+        "settings": {}
+      }
+    },
+    "content_for_index": []
   },
   "presets": {
     "Default": {}
