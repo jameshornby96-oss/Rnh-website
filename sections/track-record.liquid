@@ -1,0 +1,45 @@
+<section class="track-record section" data-track-record>
+  <div class="page-width">
+    <div class="track-record__header">
+      <div><span class="eyebrow">{{ section.settings.eyebrow }}</span><h2>{{ section.settings.heading }}</h2></div>
+      <div class="track-record__status"><span></span>{{ section.settings.status }}</div>
+    </div>
+    <div class="track-record__panel">
+      <div class="track-record__chart" aria-label="Illustrative performance chart">
+        <svg viewBox="0 0 760 300" role="img" aria-label="Upward research process line"><path class="track-record__area" d="M0 262 L70 250 L132 234 L205 242 L274 204 L340 212 L422 172 L495 187 L570 116 L640 132 L704 72 L760 36 L760 300 L0 300 Z"></path><path class="track-record__line" d="M0 262 L70 250 L132 234 L205 242 L274 204 L340 212 L422 172 L495 187 L570 116 L640 132 L704 72 L760 36"></path></svg>
+        <div class="track-record__axis"><span>OPEN</span><span>REVIEW</span><span>NOW</span></div>
+      </div>
+      <aside class="track-record__metrics" data-track-metrics data-one="{{ section.settings.one_month }}" data-three="{{ section.settings.three_month }}" data-ytd="{{ section.settings.ytd }}">
+        <span class="meta">{{ section.settings.metric_label }}</span>
+        <strong data-track-value>{{ section.settings.ytd }}</strong>
+        <span data-track-period>YTD</span>
+        <div class="track-record__controls" role="group" aria-label="Performance period"><button type="button" data-track-range="one">1M</button><button type="button" data-track-range="three">3M</button><button type="button" class="is-active" data-track-range="ytd">YTD</button></div>
+      </aside>
+    </div>
+    <div class="track-record__ledger">
+      {% for block in section.blocks %}
+        <article {{ block.shopify_attributes }}><span>{{ block.settings.number }}</span><div><small>{{ block.settings.label }}</small><h3>{{ block.settings.title }}</h3></div><p>{{ block.settings.detail }}</p></article>
+      {% endfor %}
+    </div>
+    <p class="track-record__disclaimer">{{ section.settings.disclaimer }}</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name":"Research — Track record",
+  "settings":[
+    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"R&H / TRACK RECORD"},
+    {"type":"text","id":"heading","label":"Heading","default":"Track record."},
+    {"type":"text","id":"status","label":"Status label","default":"LIVE / INTERNAL"},
+    {"type":"text","id":"metric_label","label":"Metric label","default":"NET P&L / VERIFIED"},
+    {"type":"text","id":"one_month","label":"1 month value","default":"+2.4%"},
+    {"type":"text","id":"three_month","label":"3 month value","default":"+6.8%"},
+    {"type":"text","id":"ytd","label":"YTD value","default":"+12.4%"},
+    {"type":"textarea","id":"disclaimer","label":"Disclaimer","default":"Illustrative internal dashboard. Replace with independently verified results before presenting any information as a performance record. Not investment advice."}
+  ],
+  "blocks":[{"type":"entry","name":"Ledger entry","settings":[{"type":"text","id":"number","label":"Number","default":"01"},{"type":"text","id":"label","label":"Label","default":"MACRO"},{"type":"text","id":"title","label":"Title","default":"Policy repricing"},{"type":"text","id":"detail","label":"Detail","default":"+1.8% / closed"}]}],
+  "max_blocks":6,
+  "presets":[{"name":"Research — Track record","blocks":[{"type":"entry"},{"type":"entry","settings":{"number":"02","label":"RATES","title":"Duration framework","detail":"+0.9% / reviewed"}},{"type":"entry","settings":{"number":"03","label":"FX","title":"Dollar discipline","detail":"+1.2% / open"}}]}]
+}
+{% endschema %}
