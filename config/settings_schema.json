@@ -1,7 +1,7 @@
 [
   {"name":"Theme settings","settings":[
     {"type":"image_picker","id":"logo","label":"Logo"},
-    {"type":"text","id":"wordmark","label":"Wordmark","default":"RH Capital"},
+    {"type":"text","id":"wordmark","label":"Wordmark","default":"R&H Capital"},
     {"type":"color","id":"background","label":"Background","default":"#F5F2E9"},
     {"type":"color","id":"foreground","label":"Text","default":"#171717"},
     {"type":"color","id":"gold","label":"Ochre accent","default":"#C49322"},
