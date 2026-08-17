@@ -1,1 +1,24 @@
-{"current":{"wordmark":"R&H Capital","background":"#F5F2E9","foreground":"#171717","gold":"#C49322","border":"#c9c4b8","muted":"#68655d","type_scale":"standard","footer_copy":"Independent market research, macroeconomic insight, and active trading experience."},"presets":{"Default":{}}}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "wordmark": "R&H Capital",
+    "background": "#F5F2E9",
+    "foreground": "#171717",
+    "gold": "#C49322",
+    "border": "#c9c4b8",
+    "muted": "#68655d",
+    "type_scale": "standard",
+    "footer_copy": "Independent market research, macroeconomic insight, and active trading experience."
+  },
+  "presets": {
+    "Default": {}
+  }
+}
