@@ -1,0 +1,23 @@
+<section class="about-signal section" data-reveal>
+  <div class="page-width">
+    <div class="section-meta"><span>{{ section.settings.eyebrow }}</span><span>R&H / SIGNAL MAP</span></div>
+    <div class="about-signal__grid">
+      <div class="about-signal__statement">
+        <h2>{{ section.settings.heading | escape | newline_to_br }}</h2>
+        <p>{{ section.settings.copy }}</p>
+      </div>
+      <div class="about-signal__map" aria-label="RH Capital decision process diagram">
+        <div class="about-signal__axis about-signal__axis--x">TIME / FEEDBACK</div>
+        <div class="about-signal__axis about-signal__axis--y">CONVICTION</div>
+        <span class="about-signal__line about-signal__line--one"></span><span class="about-signal__line about-signal__line--two"></span>
+        {% for block in section.blocks %}
+          <div class="about-signal__node about-signal__node--{{ forloop.index }}" {{ block.shopify_attributes }}><small>{{ block.settings.number }}</small><strong>{{ block.settings.title }}</strong><em>{{ block.settings.label }}</em></div>
+        {% endfor %}
+        <div class="about-signal__origin">R&H / METHOD</div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{"name":"About — Signal Map","settings":[{"type":"text","id":"eyebrow","label":"Technical label","default":"RH CAPITAL / DECISION SYSTEM"},{"type":"textarea","id":"heading","label":"Heading","default":"A view becomes useful\nwhen it can be tested."},{"type":"textarea","id":"copy","label":"Supporting copy","default":"A visual expression of the RH Capital approach: observe with range, frame the decision, test the thesis and learn quickly."}],"blocks":[{"type":"node","name":"Signal node","settings":[{"type":"text","id":"number","label":"Number","default":"01"},{"type":"text","id":"title","label":"Title","default":"Observe"},{"type":"text","id":"label","label":"Small label","default":"INPUT"}]}],"max_blocks":4,"presets":[{"name":"About — Signal Map","blocks":[{"type":"node","settings":{"number":"01","title":"Observe","label":"INPUT"}},{"type":"node","settings":{"number":"02","title":"Frame","label":"THESIS"}},{"type":"node","settings":{"number":"03","title":"Test","label":"RISK"}},{"type":"node","settings":{"number":"04","title":"Review","label":"FEEDBACK"}}]}]}
+{% endschema %}
