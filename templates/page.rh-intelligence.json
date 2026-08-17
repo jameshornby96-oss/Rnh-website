@@ -19,10 +19,18 @@
     },
     "newsletter": {
       "type": "newsletter-signup",
+      "custom_css": [
+        ".newsletter-signup{padding-block:10rem}",
+        ".newsletter-signup h2{font-size:8rem}",
+        ".newsletter-form input,.newsletter-form .button{min-height:5.5rem;font-size:1.25rem}",
+        ".newsletter-form input{padding:1.5rem}"
+      ],
       "settings": {
         "eyebrow": "R&H / INTELLIGENCE",
         "heading": "Join the free newsletter.",
-        "description": "Weekly notes on macro, markets and disciplined decision-making. No noise, no charge."
+        "description": "Weekly notes on macro, markets and disciplined decision-making. No noise, no charge.",
+        "button_label": "Join free",
+        "note": "Free to join. Leave whenever you like."
       }
     }
   },
