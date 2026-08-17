@@ -1,1 +1,95 @@
-{"sections":{"hero":{"type":"hero-rh","settings":{}},"ticker":{"type":"ticker","blocks":{"a":{"type":"item","settings":{"text":"Before risk / London / UK"}},"b":{"type":"item","settings":{"text":"Discipline > drama / R&H / 01"}},"c":{"type":"item","settings":{"text":"Five-figure ambition / long view, short feedback loop"}},"d":{"type":"item","settings":{"text":"Research before risk"}}},"block_order":["a","b","c","d"],"settings":{}},"intro":{"type":"editorial-intro","settings":{"label":"The RH approach","text":"Independent research built to make complexity legible. We pair macroeconomic perspective with active trading experience, then put every view through a disciplined decision process."}},"research":{"type":"research-grid","settings":{}},"products":{"type":"featured-products","settings":{}},"newsletter":{"type":"newsletter-signup","settings":{}}},"order":["hero","ticker","intro","research","products","newsletter"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "hero-rh",
+      "settings": {
+        "eyebrow": "Independent finance company / UK",
+        "heading": "Building a\nnew\ngeneration\nof macro\nresearch.",
+        "description": "Independent market research, macroeconomic insight, and active trading experience.",
+        "primary_label": "Explore R&H",
+        "primary_link": "",
+        "secondary_label": "Join R&H Intelligence",
+        "secondary_link": "shopify://pages/r-h-intelligence",
+        "card_title": "Process over prediction",
+        "disclaimer": "Illustrative internal framework. Not a performance record, forecast, or investment recommendation."
+      }
+    },
+    "ticker": {
+      "type": "ticker",
+      "blocks": {
+        "a": {
+          "type": "item",
+          "settings": {
+            "text": "Before risk / London / UK"
+          }
+        },
+        "b": {
+          "type": "item",
+          "settings": {
+            "text": "Discipline > drama / R&H / 01"
+          }
+        },
+        "c": {
+          "type": "item",
+          "settings": {
+            "text": "Five-figure ambition / long view, short feedback loop"
+          }
+        },
+        "d": {
+          "type": "item",
+          "settings": {
+            "text": "Research before risk"
+          }
+        }
+      },
+      "block_order": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "settings": {}
+    },
+    "intro": {
+      "type": "editorial-intro",
+      "settings": {
+        "label": "The RH approach",
+        "text": "Independent research built to make complexity legible. We pair macroeconomic perspective with active trading experience, then put every view through a disciplined decision process.",
+        "link_label": "",
+        "link": ""
+      }
+    },
+    "research": {
+      "type": "research-grid",
+      "settings": {
+        "label": "Latest intelligence",
+        "heading": "Research for decisions that matter."
+      }
+    },
+    "products": {
+      "type": "featured-products",
+      "settings": {
+        "label": "Products",
+        "heading": "Tools for independent thinking.",
+        "collection": "",
+        "limit": 3
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "ticker",
+    "intro",
+    "research",
+    "products"
+  ]
+}
