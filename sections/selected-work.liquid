@@ -1,0 +1,17 @@
+<section class="selected-work section" aria-labelledby="SelectedWork-{{ section.id }}"><div class="page-width">
+  <div class="section-heading"><span class="eyebrow">{{ section.settings.eyebrow }}</span><h2 id="SelectedWork-{{ section.id }}">{{ section.settings.heading }}</h2></div>
+  {% if section.settings.intro != blank %}<p class="selected-work__intro">{{ section.settings.intro }}</p>{% endif %}
+  <div class="selected-work__list">
+    {% for block in section.blocks %}
+      <article class="selected-work__row" {{ block.shopify_attributes }}>
+        <div class="selected-work__index">{% if block.settings.number != blank %}{{ block.settings.number }}{% else %}{{ forloop.index | prepend: '0' | slice: -2, 2 }}{% endif %}</div>
+        {% if block.settings.image != blank %}<div class="selected-work__image">{{ block.settings.image | image_url: width: 640 | image_tag: loading: 'lazy', alt: block.settings.title }}</div>{% endif %}
+        <div class="selected-work__main"><span class="meta">{{ block.settings.category }}{% if block.settings.date != blank %} / {{ block.settings.date }}{% endif %}</span><h3>{% if block.settings.link != blank %}<a href="{{ block.settings.link }}"{% if block.settings.external %} target="_blank" rel="noopener"{% endif %}>{{ block.settings.title }}</a>{% else %}{{ block.settings.title }}{% endif %}</h3><p>{{ block.settings.description }}</p></div>
+        {% if block.settings.link != blank %}<a class="read-link selected-work__link" href="{{ block.settings.link }}"{% if block.settings.external %} target="_blank" rel="noopener"{% endif %}>{{ block.settings.link_text }} ↗</a>{% endif %}
+      </article>
+    {% endfor %}
+  </div>
+</div></section>
+{% schema %}
+{"name":"Products — Selected Work","settings":[{"type":"text","id":"eyebrow","label":"Technical label","default":"R&H / SELECTED WORK"},{"type":"text","id":"heading","label":"Heading","default":"Selected work."},{"type":"textarea","id":"intro","label":"Introduction","default":"A selection of previous RH Capital research, analysis and market work."}],"blocks":[{"type":"work","name":"Research example","settings":[{"type":"text","id":"number","label":"Index number","default":"01"},{"type":"text","id":"category","label":"Category","default":"MACRO"},{"type":"text","id":"date","label":"Optional date"},{"type":"text","id":"title","label":"Title","default":"US inflation outlook"},{"type":"textarea","id":"description","label":"Description","default":"Analysis of underlying inflation dynamics, energy transmission and Federal Reserve policy."},{"type":"image_picker","id":"image","label":"Optional thumbnail"},{"type":"url","id":"link","label":"Internal or external URL"},{"type":"text","id":"link_text","label":"CTA text","default":"VIEW RESEARCH"},{"type":"checkbox","id":"external","label":"Open link in new tab","default":true}]}],"max_blocks":12,"presets":[{"name":"Products — Selected Work","blocks":[{"type":"work","settings":{"number":"01","category":"MACRO","title":"US inflation outlook"}},{"type":"work","settings":{"number":"02","category":"EQUITIES","title":"Nuclear sector research"}},{"type":"work","settings":{"number":"03","category":"RATES","title":"Policy repricing"}}]}]}
+{% endschema %}

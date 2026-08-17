@@ -1,0 +1,43 @@
+{% assign mode = section.settings.mode %}
+<section class="intelligence-module intelligence-module--{{ mode }}">
+  <div class="page-width">
+    <div class="module-kicker"><span>{{ section.settings.kicker }}</span><span>RH / {{ mode | upcase }} / 01</span></div>
+
+    {% case mode %}
+      {% when 'about' %}
+        <div class="intelligence-split">
+          <div class="module-statement">Clarity is a<br><em>repeatable</em><br>advantage.</div>
+          <div class="process-table">
+            <div><span>01</span><strong>Observe</strong><p>Separate information from noise.</p></div>
+            <div><span>02</span><strong>Frame</strong><p>Define the decision before forming the view.</p></div>
+            <div><span>03</span><strong>Test</strong><p>Ask what would prove the thesis wrong.</p></div>
+            <div><span>04</span><strong>Review</strong><p>Use outcomes to improve the process.</p></div>
+          </div>
+        </div>
+      {% when 'research' %}
+        <div class="market-board">
+          <div class="market-board__title"><span class="live-dot"></span> R&H MACRO MONITOR <small>DELAYED / ILLUSTRATIVE</small></div>
+          <div class="market-cells">
+            <div><span>US 10Y</span><strong>4.21%</strong><em>+06 BP</em></div><div><span>DXY</span><strong>103.42</strong><em>+0.18%</em></div><div><span>BRENT</span><strong>$81.60</strong><em class="negative">−0.42%</em></div><div><span>GOLD</span><strong>$2,364</strong><em>+0.31%</em></div>
+          </div>
+          <div class="mini-chart"><svg viewBox="0 0 700 160" preserveAspectRatio="none" aria-hidden="true"><path class="area" d="M0 140L45 125 80 132 125 105 168 112 220 68 270 88 310 77 355 92 402 50 450 64 500 40 540 54 592 18 638 35 700 7V160H0Z"></path><path class="line" d="M0 140L45 125 80 132 125 105 168 112 220 68 270 88 310 77 355 92 402 50 450 64 500 40 540 54 592 18 638 35 700 7"></path></svg><span>CONVICTION / COMPOSITE SIGNAL</span></div>
+        </div>
+      {% when 'products' %}
+        <div class="intelligence-split intelligence-split--products">
+          <div class="module-statement">Built for the<br>moment <em>before</em><br>the decision.</div>
+          <div class="product-principles"><div><span>01 / BRIEFINGS</span><p>Focused, timely research for a changing macro landscape.</p></div><div><span>02 / FRAMEWORKS</span><p>Structured tools for pressure-testing a market view.</p></div><div><span>03 / INTELLIGENCE</span><p>A private stream of work designed for long-term compounding.</p></div></div>
+        </div>
+      {% when 'founders' %}
+        <div class="founder-grid"><div class="founder-quote">“The work is to stay curious long enough to see what the consensus has missed.”</div><div class="founder-notes"><span>OPERATING PRINCIPLES</span><p>Range without distraction.<br>Conviction without attachment.<br>Speed without haste.<br>Ambition without theatre.</p><small>R&H / FOUNDERS’ NOTE</small></div></div>
+      {% when 'careers' %}
+        <div class="careers-board"><div class="careers-board__lead">Small team.<br><em>Serious</em> work.</div><div class="careers-list"><div><span>01</span><strong>Think independently</strong><p>Bring a view, and be willing to revise it.</p></div><div><span>02</span><strong>Write with precision</strong><p>Make complex things legible.</p></div><div><span>03</span><strong>Stay close to reality</strong><p>Outcomes are feedback, not theatre.</p></div></div></div>
+      {% when 'next' %}
+        <div class="next-signal"><div><span class="eyebrow">NEXT SIGNAL / 02</span><h2>Long view.<br><em>Short</em> feedback loop.</h2></div><div class="signal-notes"><p>New notes, new tools, and the evolving research practice of RH Capital.</p><a href="/pages/contact" class="read-link">JOIN THE CONVERSATION ↗</a></div></div>
+      {% when 'contact' %}
+        <div class="contact-panel"><div><span class="eyebrow">INTELLIGENCE DESK</span><h2>For people who<br>want a <em>better</em><br>question.</h2></div><div class="contact-panel__details"><span>UK / LONDON</span><a href="mailto:intelligence@rhcapital.co.uk">intelligence@rhcapital.co.uk ↗</a><small>RESEARCH ACCESS / PARTNERSHIPS / CAREERS</small></div></div>
+    {% endcase %}
+  </div>
+</section>
+{% schema %}
+{"name":"Page intelligence","settings":[{"type":"select","id":"mode","label":"Page mode","default":"about","options":[{"value":"about","label":"About"},{"value":"research","label":"Research"},{"value":"products","label":"Products"},{"value":"founders","label":"Founders"},{"value":"careers","label":"Careers"},{"value":"next","label":"What's next"},{"value":"contact","label":"Contact"}]},{"type":"text","id":"kicker","label":"Technical label","default":"A SYSTEM FOR INDEPENDENT THINKING"}],"presets":[{"name":"Page intelligence"}]}
+{% endschema %}

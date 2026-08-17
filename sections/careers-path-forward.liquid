@@ -1,0 +1,18 @@
+<section class="path-forward section" aria-labelledby="PathForward-{{ section.id }}">
+  <div class="page-width">
+    <div class="section-heading"><span class="eyebrow">{{ section.settings.eyebrow }}</span><h2 id="PathForward-{{ section.id }}">{{ section.settings.heading }}</h2></div>
+    {% if section.settings.intro != blank %}<p class="path-forward__intro">{{ section.settings.intro }}</p>{% endif %}
+    <div class="path-forward__track">
+      {% for block in section.blocks %}
+        <article class="path-forward__step" {{ block.shopify_attributes }}>
+          <div class="path-forward__number">{{ block.settings.number }}</div>
+          <div class="path-forward__content"><span class="meta">{{ block.settings.label }}</span><h3>{{ block.settings.title }}</h3><p>{{ block.settings.description }}</p></div>
+          {% unless forloop.last %}<div class="path-forward__connector" aria-hidden="true">↓</div>{% endunless %}
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{"name":"Careers — Path Forward","settings":[{"type":"text","id":"eyebrow","label":"Technical label","default":"RH CAPITAL / FUTURE PATH"},{"type":"text","id":"heading","label":"Heading","default":"The path forward."},{"type":"textarea","id":"intro","label":"Introduction","default":"A deliberate progression towards a broader, more durable market practice."}],"blocks":[{"type":"stage","name":"Development stage","settings":[{"type":"text","id":"number","label":"Stage number","default":"01"},{"type":"text","id":"label","label":"Small label","default":"STEPPING STONE"},{"type":"text","id":"title","label":"Title","default":"Build the research foundation"},{"type":"textarea","id":"description","label":"Description","default":"Establish a clear, independent research practice built around disciplined process."}]}],"max_blocks":6,"presets":[{"name":"Careers — Path Forward","blocks":[{"type":"stage","settings":{"number":"01","title":"Build the research foundation"}},{"type":"stage","settings":{"number":"02","title":"Expand RH Intelligence"}},{"type":"stage","settings":{"number":"03","title":"Build the team"}},{"type":"stage","settings":{"number":"04","title":"Expand active market operations"}},{"type":"stage","settings":{"number":"05","title":"Long-term capital management"}}]}]}
+{% endschema %}

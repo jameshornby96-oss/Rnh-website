@@ -1,0 +1,14 @@
+<section class="founder-profiles section" aria-labelledby="FounderProfiles-{{ section.id }}">
+  <div class="page-width"><div class="section-heading"><span class="eyebrow">{{ section.settings.eyebrow }}</span><h2 id="FounderProfiles-{{ section.id }}">{{ section.settings.heading }}</h2></div></div>
+  <div class="founder-profiles__list page-width">
+    {% for block in section.blocks %}
+      <article class="founder-profile {% if forloop.index0 == 1 %}founder-profile--reverse{% endif %}" {{ block.shopify_attributes }}>
+        <div class="founder-profile__image">{% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 1200 | image_tag: widths: '480, 720, 960, 1200', loading: 'lazy', alt: block.settings.name }}{% else %}<span>RH / {{ block.settings.number }}</span>{% endif %}</div>
+        <div class="founder-profile__details"><span class="meta">{{ block.settings.number }} / FOUNDER PROFILE</span><h3>{{ block.settings.name }}</h3><dl><div><dt>ROLE</dt><dd>{{ block.settings.role }}</dd></div><div><dt>SPECIALITY</dt><dd>{{ block.settings.speciality }}</dd></div></dl><p>{{ block.settings.bio }}</p></div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+{% schema %}
+{"name":"Founders — Profiles","settings":[{"type":"text","id":"eyebrow","label":"Technical label","default":"RH CAPITAL / PEOPLE"},{"type":"text","id":"heading","label":"Heading","default":"The people behind the work."}],"blocks":[{"type":"founder","name":"Founder profile","settings":[{"type":"text","id":"number","label":"Profile number","default":"01"},{"type":"image_picker","id":"image","label":"Square profile image"},{"type":"text","id":"name","label":"Name","default":"Founder name"},{"type":"text","id":"role","label":"Role","default":"CO-FOUNDER"},{"type":"text","id":"speciality","label":"Speciality / focus","default":"MACRO / MARKETS / RESEARCH"},{"type":"textarea","id":"bio","label":"Biography","default":"A short editorial biography describing experience, approach, and responsibilities."}]}],"max_blocks":2,"presets":[{"name":"Founders — Profiles","blocks":[{"type":"founder","settings":{"number":"01"}},{"type":"founder","settings":{"number":"02"}}]}]}
+{% endschema %}
