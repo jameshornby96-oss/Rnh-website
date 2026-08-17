@@ -1,0 +1,13 @@
+[
+  {"name":"Theme settings","settings":[
+    {"type":"image_picker","id":"logo","label":"Logo"},
+    {"type":"text","id":"wordmark","label":"Wordmark","default":"RH Capital"},
+    {"type":"color","id":"background","label":"Background","default":"#F5F2E9"},
+    {"type":"color","id":"foreground","label":"Text","default":"#171717"},
+    {"type":"color","id":"gold","label":"Ochre accent","default":"#C49322"},
+    {"type":"color","id":"border","label":"Borders","default":"#c7c1b4"},
+    {"type":"color","id":"muted","label":"Muted text","default":"#68645b"},
+    {"type":"select","id":"type_scale","label":"Type scale","default":"standard","options":[{"value":"compact","label":"Compact"},{"value":"standard","label":"Standard"},{"value":"large","label":"Large"}]},
+    {"type":"textarea","id":"footer_copy","label":"Footer copy","default":"Independent market research, macroeconomic insight, and active trading experience."}
+  ]}
+]
