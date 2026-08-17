@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="{{ settings.background }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+    {% if settings.favicon != blank %}<link rel="icon" href="{{ settings.favicon | image_url: width: 32 }}">{% endif %}
+    <title>{% if page_title != blank %}{{ page_title }}{% else %}{{ shop.name }}{% endif %}{% unless page_title contains shop.name %} — {{ shop.name }}{% endunless %}</title>
+    {% if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
+    {{ content_for_header }}
+    {{ 'base.css' | asset_url | stylesheet_tag }}
+    <style>:root{--background:{{ settings.background }};--foreground:{{ settings.foreground }};--gold:{{ settings.gold }};--border:{{ settings.border }};--muted:{{ settings.muted }};{% if settings.type_scale == 'compact' %}--display:clamp(2.8rem,7vw,8rem);{% elsif settings.type_scale == 'large' %}--display:clamp(3.5rem,9vw,10.5rem);{% endif %}}</style>
+    <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+  </head>
+  <body class="template-{{ template.name | handle }}">
+    <a class="skip-link" href="#MainContent">Skip to content</a>
+    {% section 'header' %}
+    <main id="MainContent" role="main">{{ content_for_layout }}</main>
+    {% section 'footer' %}
+    {% section 'cart-drawer' %}
+  </body>
+</html>
