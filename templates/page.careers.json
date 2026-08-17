@@ -1,1 +1,37 @@
-{"sections":{"hero":{"type":"page-hero","settings":{"eyebrow":"RH Capital / Careers","heading":"Work with conviction."}},"intelligence":{"type":"page-intelligence","settings":{"mode":"careers","kicker":"THE R&H WORKING STANDARD"}},"main":{"type":"main-page","settings":{}}},"order":["hero","intelligence","main"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "eyebrow": "RH Capital / Careers",
+        "heading": "Work with conviction.",
+        "description": ""
+      }
+    },
+    "intelligence": {
+      "type": "page-intelligence",
+      "settings": {
+        "mode": "careers",
+        "kicker": "THE R&H WORKING STANDARD"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "intelligence",
+    "main"
+  ]
+}

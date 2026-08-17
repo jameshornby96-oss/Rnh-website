@@ -1,1 +1,103 @@
-{"sections":{"hero":{"type":"page-hero","settings":{"eyebrow":"RH Capital / Products","heading":"Intelligence you can work with."}},"intelligence":{"type":"page-intelligence","settings":{"mode":"products","kicker":"THE R&H PRODUCT SYSTEM"}},"products":{"type":"featured-products","settings":{"label":"Products","heading":"Research, designed for use."}},"selected_work":{"type":"selected-work","blocks":{"work_1":{"type":"work","settings":{"number":"01","category":"MACRO","title":"US inflation outlook","description":"Analysis of underlying inflation dynamics, energy transmission and Federal Reserve policy.","link_text":"VIEW RESEARCH"}},"work_2":{"type":"work","settings":{"number":"02","category":"EQUITIES","title":"Nuclear sector research","description":"A framework for assessing policy support, supply constraints and long-duration demand in the nuclear value chain.","link_text":"VIEW RESEARCH"}},"work_3":{"type":"work","settings":{"number":"03","category":"RATES","title":"Policy repricing","description":"Research into the shifting relationship between inflation, growth expectations and the path of official rates.","link_text":"VIEW RESEARCH"}}},"block_order":["work_1","work_2","work_3"],"settings":{}},"main":{"type":"main-page","settings":{}}},"order":["hero","intelligence","products","selected_work","main"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "eyebrow": "RH Capital / Products",
+        "heading": "Intelligence you can work with.",
+        "description": ""
+      }
+    },
+    "intelligence": {
+      "type": "page-intelligence",
+      "settings": {
+        "mode": "products",
+        "kicker": "THE R&H PRODUCT SYSTEM"
+      }
+    },
+    "products": {
+      "type": "featured-products",
+      "settings": {
+        "label": "Products",
+        "heading": "Research, designed for use.",
+        "collection": "",
+        "limit": 3
+      }
+    },
+    "selected_work": {
+      "type": "selected-work",
+      "blocks": {
+        "work_1": {
+          "type": "work",
+          "settings": {
+            "number": "01",
+            "category": "MACRO",
+            "date": "",
+            "title": "US inflation outlook",
+            "description": "Analysis of underlying inflation dynamics, energy transmission and Federal Reserve policy.",
+            "link": "",
+            "link_text": "VIEW RESEARCH",
+            "external": true
+          }
+        },
+        "work_2": {
+          "type": "work",
+          "settings": {
+            "number": "02",
+            "category": "EQUITIES",
+            "date": "",
+            "title": "Nuclear sector research",
+            "description": "A framework for assessing policy support, supply constraints and long-duration demand in the nuclear value chain.",
+            "link": "",
+            "link_text": "VIEW RESEARCH",
+            "external": true
+          }
+        },
+        "work_3": {
+          "type": "work",
+          "settings": {
+            "number": "03",
+            "category": "RATES",
+            "date": "",
+            "title": "Policy repricing",
+            "description": "Research into the shifting relationship between inflation, growth expectations and the path of official rates.",
+            "link": "",
+            "link_text": "VIEW RESEARCH",
+            "external": true
+          }
+        }
+      },
+      "block_order": [
+        "work_1",
+        "work_2",
+        "work_3"
+      ],
+      "settings": {
+        "eyebrow": "R&H / SELECTED WORK",
+        "heading": "Selected work.",
+        "intro": "A selection of previous RH Capital research, analysis and market work."
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "products",
+    "selected_work",
+    "intelligence",
+    "main"
+  ]
+}
