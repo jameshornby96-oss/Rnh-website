@@ -12,7 +12,7 @@
     "hero": {
       "type": "page-hero",
       "custom_css": [
-        "&{display:none}"
+        ".page-hero{display:none}"
       ],
       "settings": {
         "eyebrow": "R&H / INTELLIGENCE",
@@ -33,7 +33,7 @@
         "heading": "Join the free newsletter.",
         "description": "Weekly notes on macro, markets and disciplined decision-making. No noise, no charge.",
         "button_label": "Join free",
-        "note": "Free to join. Leave whenever you like.#shopify-section-template--28582974718218__hero{display:none}.newsletter-signup{padding-block:10rem}.newsletter-signup__inner{display:block;text-align:center}.newsletter-signup h2{font-size:8rem;margin-inline:auto}.newsletter-signup__action{max-width:48rem;margin:2rem auto 0}.newsletter-form{margin-inline:auto}.newsletter-form input::placeholder{color:transparent}.newsletter-form input,.newsletter-form .button{min-height:5.5rem;font-size:1.25rem}.newsletter-form input{padding:1.5rem}.newsletter-signup{padding-block:10rem}.newsletter-signup__inner.newsletter-signup__inner{display:block;text-align:center}.newsletter-signup h2{font-size:8rem;margin-inline:auto}.newsletter-signup__action.newsletter-signup__action{max-width:48rem;margin:2rem auto 0}.newsletter-form.newsletter-form{margin-inline:auto}.newsletter-form input::placeholder{color:transparent}.newsletter-form input,.newsletter-form .button{min-height:5.5rem;font-size:1.25rem}.newsletter-form input{padding:1.5rem}"
+        "note": "Free to join. Leave whenever you like.#shopify-section-template--28582974718218__hero{display:none}.newsletter-signup{padding-block:10rem}.newsletter-signup__inner{display:block;text-align:center}.newsletter-signup h2{font-size:8rem;margin-inline:auto}.newsletter-signup__action{max-width:48rem;margin:2rem auto 0}.newsletter-form{margin-inline:auto}.newsletter-form input::placeholder{color:transparent}.newsletter-form input,.newsletter-form .button{min-height:5.5rem;font-size:1.25rem}.newsletter-form input{padding:1.5rem}.newsletter-signup{padding-block:10rem}.newsletter-signup__inner.newsletter-signup__inner{display:block;text-align:center}.newsletter-signup h2{font-size:8rem;margin-inline:auto}.newsletter-signup__action.newsletter-signup__action{max-width:48rem;margin:2rem auto 0}.newsletter-form.newsletter-form{margin-inline:auto}.newsletter-form input::placeholder{color:transparent}.newsletter-form input,.newsletter-form .button{min-height:5.5rem;font-size:1.25rem}.newsletter-form input{padding:1.5rem}.newsletter-signup{padding-block:10rem;text-align:center}.newsletter-signup h2{font-size:8rem}.newsletter-signup .newsletter-signup__inner{display:block}.newsletter-signup .newsletter-signup__action{max-width:48rem;margin:2rem auto 0}.newsletter-signup .newsletter-form{margin-inline:auto}.newsletter-signup .newsletter-form input::placeholder{color:transparent}.newsletter-signup .newsletter-form input,.newsletter-signup .newsletter-form .button{min-height:5.5rem;font-size:1.25rem}"
       }
     }
   },
