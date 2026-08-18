@@ -1,1 +1,12 @@
-<section class="section"><div class="page-width split-intro"><span class="eyebrow">{{ section.settings.label }}</span><div><p>{{ section.settings.text }}</p>{% if section.settings.link_label != blank %}<p><a class="read-link" href="{{ section.settings.link }}">{{ section.settings.link_label }} ↗</a></p>{% endif %}</div></div></section>{% schema %}{"name":"Editorial intro","settings":[{"type":"text","id":"label","label":"Label","default":"The RH approach"},{"type":"textarea","id":"text","label":"Text","default":"A research practice designed around process, independent thought and the discipline to change a view."},{"type":"text","id":"link_label","label":"Link label"},{"type":"url","id":"link","label":"Link"}],"presets":[{"name":"Editorial intro"}]}{% endschema %}
+<section class="section editorial-intro">
+  <div class="page-width split-intro">
+    <span class="eyebrow">{{ section.settings.label }}</span>
+    <div>
+      <p class="editorial-intro__copy">{{ section.settings.text | newline_to_br }}</p>
+      {% if section.settings.link_label != blank %}<p><a class="read-link" href="{{ section.settings.link }}">{{ section.settings.link_label }} ↗</a></p>{% endif %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{"name":"Editorial intro","settings":[{"type":"text","id":"label","label":"Label","default":"The R&H approach"},{"type":"textarea","id":"text","label":"Text","default":"A research practice designed around process, independent thought and the discipline to change a view."},{"type":"text","id":"link_label","label":"Link label"},{"type":"url","id":"link","label":"Link"}],"presets":[{"name":"Editorial intro"}]}
+{% endschema %}
