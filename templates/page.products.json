@@ -35,9 +35,9 @@
             "date": "",
             "title": "R&H research document 01",
             "description": "Selected R&H research document.",
-            "link": "/pages/research-document-01",
+            "link": "https://1drv.ms/u/c/f6f8a6c897c4a7f0/AcKiWurVEBFOj9tJ4ipRK4E",
             "link_text": "OPEN DOCUMENT",
-            "external": false
+            "external": true
           }
         },
         "work_2": {
@@ -48,9 +48,9 @@
             "date": "",
             "title": "R&H research document 02",
             "description": "Selected R&H research document.",
-            "link": "/pages/research-document-02",
+            "link": "https://1drv.ms/u/c/f6f8a6c897c4a7f0/ARYNTOftbxBLkFpR2bmZjC4",
             "link_text": "OPEN DOCUMENT",
-            "external": false
+            "external": true
           }
         }
       },
