@@ -11,7 +11,17 @@
   "sections": {
     "hero": {
       "type": "hero-rh",
-      "settings": {}
+      "settings": {
+        "eyebrow": "Independent finance company / UK",
+        "heading": "Building a\nnew\ngeneration\nof macro\nresearch.",
+        "description": "Independent market research, macroeconomic insight, and active trading experience.",
+        "primary_label": "Explore R&H",
+        "primary_link": "",
+        "secondary_label": "Join R&H Intelligence",
+        "secondary_link": "",
+        "card_title": "Process over prediction",
+        "disclaimer": "Illustrative internal framework. Not a performance record, forecast, or investment recommendation."
+      }
     },
     "ticker": {
       "type": "ticker",
@@ -53,12 +63,18 @@
       "type": "editorial-intro",
       "settings": {
         "label": "The R&H approach",
-        "text": "Independent investment research built to make complexity legible. We pair macroeconomic perspective with disciplined decision-making."
+        "text": "Independent investment research built to make complexity legible. We pair macroeconomic perspective with disciplined decision-making.",
+        "link_label": "",
+        "link": ""
       }
     },
     "research": {
       "type": "research-grid",
-      "settings": {}
+      "disabled": true,
+      "settings": {
+        "label": "Latest intelligence",
+        "heading": "Research for decisions that matter."
+      }
     },
     "portfolio_performance": {
       "type": "track-record",
@@ -79,11 +95,22 @@
     },
     "products": {
       "type": "featured-products",
-      "settings": {}
+      "settings": {
+        "label": "Products",
+        "heading": "Tools for independent thinking.",
+        "collection": "",
+        "limit": 3
+      }
     },
     "newsletter": {
       "type": "newsletter-signup",
-      "settings": {}
+      "settings": {
+        "eyebrow": "R&H / INTELLIGENCE",
+        "heading": "R&H Intelligence",
+        "description": "Research, market views and investment intelligence from R&H Capital.",
+        "button_label": "Subscribe",
+        "note": "By subscribing, you agree to receive R&H communications. Free to join. Leave whenever you like."
+      }
     }
   },
   "order": [

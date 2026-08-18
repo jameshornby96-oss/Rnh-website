@@ -22,25 +22,31 @@
       "blocks": {
         "view_1": {
           "type": "view",
+          "disabled": true,
           "settings": {
             "number": "01",
             "category": "INFLATION",
+            "date": "",
             "text": "US disinflation remains intact, but energy represents the principal upside tail risk."
           }
         },
         "view_2": {
           "type": "view",
+          "disabled": true,
           "settings": {
             "number": "02",
             "category": "RATES",
+            "date": "",
             "text": "The front end is increasingly sensitive to labour deterioration rather than marginal CPI surprises."
           }
         },
         "view_3": {
           "type": "view",
+          "disabled": true,
           "settings": {
             "number": "03",
             "category": "FX",
+            "date": "",
             "text": "Dollar direction is increasingly a relative-growth story rather than simply a Fed story."
           }
         },
@@ -127,7 +133,32 @@
         "framework_3",
         "framework_4"
       ],
-      "settings": {}
+      "settings": {
+        "monitor_eyebrow": "R&H MACRO MONITOR",
+        "monitor_title": "R&H MACRO MONITOR",
+        "monitor_note": "A concise, editable interpretation of the current macro regime.",
+        "monitor_disclaimer": "DELAYED / ILLUSTRATIVE",
+        "growth": "Cooling ↓",
+        "inflation": "Sticky →",
+        "liquidity": "Improving ↑",
+        "policy": "Restrictive →",
+        "regime": "Late-cycle / Disinflationary",
+        "risk_bias": "Neutral → Risk-on",
+        "duration": "Overweight",
+        "usd": "Neutral",
+        "us_10y": "4.21%",
+        "dxy": "103.42",
+        "brent": "$81.60",
+        "gold": "$2,364",
+        "featured_label": "FEATURED RESEARCH",
+        "featured_category": "MACRO",
+        "featured_title": "The Price of Patience",
+        "featured_description": "US inflation, labour-market deterioration and the changing central-bank reaction function.",
+        "featured_link": "",
+        "featured_link_text": "Read research",
+        "views_note": "",
+        "process_heading": "The objective is not prediction. It is a better process for forming a view."
+      }
     },
     "archive": {
       "type": "research-archive",
@@ -138,7 +169,8 @@
             "category": "MACRO",
             "date": "17.08.26",
             "title": "The price of patience",
-            "description": "A measured perspective on the forces shaping the next macro decision."
+            "description": "A measured perspective on the forces shaping the next macro decision.",
+            "link": ""
           }
         },
         "two": {
@@ -147,7 +179,8 @@
             "category": "RATES",
             "date": "12.08.26",
             "title": "Rates after the repricing",
-            "description": "What the rate complex is acknowledging, and what it is still missing."
+            "description": "What the rate complex is acknowledging, and what it is still missing.",
+            "link": ""
           }
         },
         "three": {
@@ -156,7 +189,8 @@
             "category": "FX",
             "date": "06.08.26",
             "title": "Dollar discipline",
-            "description": "A framework for treating the dollar as a consequence, not a headline."
+            "description": "A framework for treating the dollar as a consequence, not a headline.",
+            "link": ""
           }
         }
       },
@@ -169,41 +203,21 @@
     },
     "track_record": {
       "type": "track-record",
-      "blocks": {
-        "one": {
-          "type": "entry",
-          "settings": {
-            "number": "01",
-            "label": "MACRO",
-            "title": "Policy repricing",
-            "detail": "+1.8% / closed"
-          }
-        },
-        "two": {
-          "type": "entry",
-          "settings": {
-            "number": "02",
-            "label": "RATES",
-            "title": "Duration framework",
-            "detail": "+0.9% / reviewed"
-          }
-        },
-        "three": {
-          "type": "entry",
-          "settings": {
-            "number": "03",
-            "label": "FX",
-            "title": "Dollar discipline",
-            "detail": "+1.2% / open"
-          }
-        }
-      },
-      "block_order": [
-        "one",
-        "two",
-        "three"
-      ],
-      "settings": {}
+      "disabled": true,
+      "settings": {
+        "eyebrow": "PORTFOLIO PERFORMANCE",
+        "heading": "Track record.",
+        "intro": "Tracking how ideas generated through the R&H research framework translate into model portfolio decisions.",
+        "performance_return": "+40.0%",
+        "benchmark_name": "S&P 500 (SPX)",
+        "benchmark_return": "+12.0%",
+        "since_label": "SINCE INCEPTION",
+        "inception": "AUG 2025",
+        "starting_value": "£100,000",
+        "performance_data": "2025-08-01,0,0\\n2025-09-01,2,1\\n2025-10-01,5,2\\n2025-11-01,4,1\\n2025-12-01,8,3\\n2026-01-01,12,4\\n2026-02-01,10,2\\n2026-03-01,16,5\\n2026-04-01,21,6\\n2026-05-01,25,7\\n2026-06-01,31,9\\n2026-07-01,36,11\\n2026-08-01,40,12",
+        "show_exposure": false,
+        "disclaimer": "Performance shown represents the R&H research/model portfolio and is provided for informational purposes only. It does not represent client assets or investment advice. Past performance is not indicative of future results."
+      }
     }
   },
   "order": [
