@@ -15,7 +15,7 @@
     "gold": "#C49322",
     "border": "#c9c4b8",
     "muted": "#68655d",
-    "type_scale": "standard",
+    "type_scale": "compact",
     "footer_copy": "Independent market research, macroeconomic insight, and active trading experience.",
     "sections": {
       "header": {
