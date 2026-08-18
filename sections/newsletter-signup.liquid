@@ -5,7 +5,6 @@
       <h1>{{ section.settings.heading }}</h1>
       <p class="newsletter-signup__description">{{ section.settings.description }}</p>
     </div>
-
     <div class="newsletter-signup__action">
       {% form 'customer', class: 'newsletter-form', id: 'NewsletterForm-' | append: section.id %}
         <input type="hidden" name="contact[tags]" value="newsletter,rh-intelligence">
