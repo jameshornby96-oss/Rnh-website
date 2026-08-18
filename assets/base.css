@@ -24,6 +24,10 @@ body:before{background:rgba(245,242,233,.84)}body{background-size:40px 40px;lett
 body{font-synthesis:none}
 h1,h2,h3,h4,h5,h6{font-weight:500}
 strong{font-weight:600}
+/* Wider editorial measure and calmer display weight */
+.editorial-intro .split-intro .editorial-intro__copy{max-width:none!important;width:100%}
+h1{font-weight:500!important}
+
 .eyebrow,.meta,.module-kicker,.process-table span,.careers-list span,.product-principles span,.market-cells span,.market-board__title{font-weight:600}
 .editorial-intro .split-intro{grid-template-columns:minmax(150px,.5fr) minmax(0,1.5fr)}
 .editorial-intro__copy{max-width:72ch;font-size:clamp(1.3rem,2.15vw,2.3rem);line-height:1.2;letter-spacing:-.038em;font-weight:400}
