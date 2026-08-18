@@ -25,7 +25,10 @@ body{font-synthesis:none}
 h1,h2,h3,h4,h5,h6{font-weight:500}
 strong{font-weight:600}
 /* Wider editorial measure and calmer display weight */
-.editorial-intro .split-intro .editorial-intro__copy{max-width:none!important;width:100%}
+.editorial-intro .split-intro .editorial-intro__copy{max-width:none!important;
+/* Research library controls intentionally hidden */
+.research-filters{display:none!important}
+width:100%}
 h1{font-weight:500!important}
 
 .eyebrow,.meta,.module-kicker,.process-table span,.careers-list span,.product-principles span,.market-cells span,.market-board__title{font-weight:600}
