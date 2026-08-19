@@ -31,12 +31,12 @@
           "type": "work",
           "settings": {
             "number": "01",
-            "category": "MACRO",
+            "category": "RESEARCH",
             "date": "",
-            "title": "US inflation outlook",
-            "description": "Analysis of underlying inflation dynamics, energy transmission and Federal Reserve policy.",
-            "link": "",
-            "link_text": "VIEW RESEARCH",
+            "title": "R&H April Macro Summary",
+            "description": "Selected R&H research document.",
+            "link": "https://1drv.ms/u/c/f6f8a6c897c4a7f0/AcKiWurVEBFOj9tJ4ipRK4E",
+            "link_text": "OPEN DOCUMENT",
             "external": true
           }
         },
@@ -44,49 +44,10 @@
           "type": "work",
           "settings": {
             "number": "02",
-            "category": "EQUITIES",
-            "date": "",
-            "title": "Nuclear sector research",
-            "description": "A framework for assessing policy support, supply constraints and long-duration demand in the nuclear value chain.",
-            "link": "",
-            "link_text": "VIEW RESEARCH",
-            "external": true
-          }
-        },
-        "work_3": {
-          "type": "work",
-          "settings": {
-            "number": "03",
-            "category": "RATES",
-            "date": "",
-            "title": "Policy repricing",
-            "description": "Research into the shifting relationship between inflation, growth expectations and the path of official rates.",
-            "link": "",
-            "link_text": "VIEW RESEARCH",
-            "external": true
-          }
-        },
-        "work_4": {
-          "type": "work",
-          "settings": {
-            "number": "04",
             "category": "RESEARCH",
             "date": "",
-            "title": "R&H research document 01",
-            "description": "Selected R&H research document. Open the source file in OneDrive.",
-            "link": "https://1drv.ms/u/c/f6f8a6c897c4a7f0/AcKiWurVEBFOj9tJ4ipRK4E",
-            "link_text": "OPEN DOCUMENT",
-            "external": true
-          }
-        },
-        "work_5": {
-          "type": "work",
-          "settings": {
-            "number": "05",
-            "category": "RESEARCH",
-            "date": "",
-            "title": "R&H research document 02",
-            "description": "Selected R&H research document. Open the source file in OneDrive.",
+            "title": "R&H Oracle Outlook",
+            "description": "Selected R&H research document.",
             "link": "https://1drv.ms/u/c/f6f8a6c897c4a7f0/ARYNTOftbxBLkFpR2bmZjC4",
             "link_text": "OPEN DOCUMENT",
             "external": true
@@ -95,10 +56,7 @@
       },
       "block_order": [
         "work_1",
-        "work_2",
-        "work_3",
-        "work_4",
-        "work_5"
+        "work_2"
       ],
       "settings": {
         "eyebrow": "R&H / SELECTED WORK",
