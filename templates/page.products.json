@@ -21,7 +21,9 @@
       "type": "featured-products",
       "settings": {
         "label": "R&H / PRODUCTS",
-        "heading": "Research products / coming soon."
+        "heading": "Research products / coming soon.",
+        "collection": "",
+        "limit": 3
       }
     },
     "newsletter_feature": {
@@ -31,16 +33,16 @@
         "category": "MACRO / MARKETS / RESEARCH",
         "heading": "Our newsletters.",
         "description": "A considered briefing on the week's macro and market developments, with a focused note on the questions that matter for your research.",
+        "image": "shopify://shop_images/RnH_Capital_Market_Intelligence.png",
         "link": "/pages/r-h-intelligence",
-        "link_text": "Join free",
-        "image": "shopify://shop_images/RnH_Capital_Market_Intelligence.png"
+        "link_text": "Join free"
       }
     },
     "intelligence": {
       "type": "page-intelligence",
       "settings": {
         "mode": "products",
-        "kicker": "THE R&H PRODUCT SYSTEM"
+        "kicker": "THE R&H MAIN CURRENT PRODUCTS"
       }
     },
     "main": {

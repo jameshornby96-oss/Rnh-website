@@ -96,8 +96,8 @@
     "products": {
       "type": "featured-products",
       "settings": {
-        "label": "Products",
-        "heading": "Tools for independent thinking.",
+        "label": "Products coming soon",
+        "heading": "For the traders wanting real progress...",
         "collection": "",
         "limit": 3
       }
