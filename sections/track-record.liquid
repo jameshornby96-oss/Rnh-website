@@ -48,14 +48,14 @@
   var data;
   try{data=JSON.parse(raw).trim().split(/\\n+/).map(function(row){var a=row.split(',');return {date:a[0],rh:Number(a[1]),spx:Number(a[2])};}).filter(function(p){return p.date&&!isNaN(p.rh)&&!isNaN(p.spx);});}catch(e){return;}
   var svg=section.querySelector('.rh-performance__chart'), tooltip=section.querySelector('.rh-performance__tooltip'), series=section.querySelector('[data-series]'), range='all', mode='return';
-  var money=function(v){return '£'+Math.round(v).toLocaleString('en-GB')}, fmt=function(v){return (v>=0?'+':'')+v.toFixed(1)+'%'};
+  var money=function(v){return '£'+Math.round(v).toLocaleString('en-GB')}, fmt=function(v){return (v>=0?'+':'')+v.toFixed(1)+'%'}, dateLabel=function(iso){var d=new Date(iso+'T00:00:00'),months=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];return months[d.getMonth()]+' '+String(d.getFullYear()).slice(2)};
   function filtered(){var out=data.slice(),n=range==='all'?0:range==='ytd'?12:Number(range);return n?out.slice(-Math.max(n,2)):out;}
   function draw(){
     var pts=filtered(), values=[];pts.forEach(function(p){values.push(p.rh,p.spx)});var lo=Math.floor((Math.min.apply(null,values)-5)/5)*5,hi=Math.ceil((Math.max.apply(null,values)+5)/5)*5;
     if(mode==='value'){lo=(100000*(1+lo/100));hi=(100000*(1+hi/100));}
     var W=900,H=420,L=65,R=18,T=20,B=48, x=function(i){return L+i*((W-L-R)/Math.max(pts.length-1,1))}, y=function(v){if(mode==='value')v=100000*(1+v/100);return T+(hi-v)*(H-T-B)/(hi-lo)}, path=function(k){return pts.map(function(p,i){return (i?'L':'M')+x(i).toFixed(1)+' '+y(p[k]).toFixed(1)}).join(' ')};
     var g='';for(var i=0;i<5;i++){var v=lo+(hi-lo)*i/4, yy=y(v);g+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+yy+'" y2="'+yy+'" stroke="#bdb5a6" stroke-width="1" opacity=".55"/><text x="'+(L-8)+'" y="'+(yy+4)+'" text-anchor="end" font-size="11" fill="#59544d">'+(mode==='value'?money(v):fmt(v))+'</text>';}
-    pts.forEach(function(p,i){if(i===0||i===pts.length-1||i===Math.round((pts.length-1)/2))g+='<text x="'+x(i)+'" y="'+(H-17)+'" text-anchor="middle" font-size="11" fill="#59544d">'+p.date.slice(5)+'</text>';});
+    var tickEvery=Math.max(1,Math.ceil((pts.length-1)/5));pts.forEach(function(p,i){if(i===0||i===pts.length-1||i%tickEvery===0)g+='<text x="'+x(i)+'" y="'+(H-17)+'" text-anchor="middle" font-size="11" fill="#59544d">'+dateLabel(p.date)+'</text>';});
     var showRh=series.value!=='spx',showSpx=series.value!=='rh';
     if(showSpx)g+='<path d="'+path('spx')+'" fill="none" stroke="#575149" stroke-width="2.4"/>';if(showRh)g+='<path d="'+path('rh')+'" fill="none" stroke="#a87824" stroke-width="3"/>';svg.innerHTML=g;
     var last=pts[pts.length-1],out=last.rh-last.spx;section.querySelector('[data-outperformance]').textContent=fmt(out);
