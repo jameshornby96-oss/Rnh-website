@@ -205,7 +205,7 @@
     },
     "track_record": {
       "type": "track-record",
-      "disabled": false,
+      "disabled": true,
       "settings": {
         "eyebrow": "PORTFOLIO PERFORMANCE",
         "heading": "Track record.",
@@ -220,12 +220,53 @@
         "show_exposure": false,
         "disclaimer": "Performance shown is an illustrative R&H research/model portfolio, constructed to demonstrate the framework. It is not client performance, investment advice or a recommendation. Past performance is not indicative of future results."
       }
+    },
+    "selected_papers": {
+      "type": "selected-work",
+      "blocks": {
+        "paper_1": {
+          "type": "work",
+          "settings": {
+            "number": "01",
+            "category": "RESEARCH",
+            "date": "",
+            "title": "R&H April Macro Summary",
+            "description": "A concise R&H view on the prevailing macro regime and the questions shaping the next decision.",
+            "link": "https://cdn.shopify.com/s/files/1/0960/3517/6714/files/rnh-capital-newsletter-original-format.pdf?v=1787141941",
+            "link_text": "READ PAPER",
+            "external": true
+          }
+        },
+        "paper_2": {
+          "type": "work",
+          "settings": {
+            "number": "02",
+            "category": "RESEARCH",
+            "date": "",
+            "title": "R&H Oracle Outlook",
+            "description": "A focused R&H research note on Oracle, market expectations and the investment case.",
+            "link": "https://cdn.shopify.com/s/files/1/0960/3517/6714/files/rnh-oracle-report-original-format.pdf?v=1787141943",
+            "link_text": "READ PAPER",
+            "external": true
+          }
+        }
+      },
+      "block_order": [
+        "paper_1",
+        "paper_2"
+      ],
+      "settings": {
+        "eyebrow": "R&H / SELECTED PAPERS",
+        "heading": "Selected papers.",
+        "intro": "A selection of recent R&H research notes."
+      }
     }
   },
   "order": [
     "hero",
     "command_centre",
     "archive",
+    "selected_papers",
     "track_record"
   ]
 }
