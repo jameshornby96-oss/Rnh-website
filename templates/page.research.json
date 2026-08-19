@@ -200,6 +200,7 @@
         "two",
         "three"
       ],
+      "disabled": true,
       "settings": {}
     },
     "track_record": {
