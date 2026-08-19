@@ -24,23 +24,6 @@
       <div class="rh-monitor__tape"><span>US 10Y <b>{{ section.settings.us_10y }}</b></span><span>DXY <b>{{ section.settings.dxy }}</b></span><span>BRENT <b>{{ section.settings.brent }}</b></span><span>GOLD <b>{{ section.settings.gold }}</b></span></div>
     </div>
 
-    <article class="rh-featured-research">
-      <div class="rh-featured-research__copy">
-        <span class="eyebrow">{{ section.settings.featured_label }}</span>
-        <p class="rh-featured-research__category">{{ section.settings.featured_category }}</p>
-        <h2>{{ section.settings.featured_title }}</h2>
-        <p>{{ section.settings.featured_description }}</p>
-        {% if section.settings.featured_link != blank %}<a class="text-link" href="{{ section.settings.featured_link }}">{{ section.settings.featured_link_text }} <span aria-hidden="true">→</span></a>{% endif %}
-      </div>
-      <div class="rh-featured-research__image">
-        {% if section.settings.featured_image != blank %}
-          {{ section.settings.featured_image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: section.settings.featured_title }}
-        {% else %}
-          <svg viewBox="0 0 600 360" aria-label="Illustrative research chart" role="img"><path d="M0 315H600M0 225H600M0 135H600M0 45H600"/><path class="rh-chart-line" d="M0 292 C55 275 85 260 125 267 S195 230 240 236 S302 174 350 198 S432 152 468 116 S536 83 600 36"/></svg>
-        {% endif %}
-      </div>
-    </article>
-
     <div class="rh-process-intro"><span class="eyebrow">OUR RESEARCH PROCESS</span><h2>{{ section.settings.process_heading }}</h2></div>
     <div class="rh-process">
       {% for block in section.blocks %}
