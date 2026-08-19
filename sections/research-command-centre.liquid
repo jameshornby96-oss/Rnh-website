@@ -41,15 +41,6 @@
       </div>
     </article>
 
-    <div class="rh-section-heading rh-section-heading--split"><span class="eyebrow">CURRENT VIEWS</span><p>{{ section.settings.views_note }}</p></div>
-    <div class="rh-current-views">
-      {% for block in section.blocks %}
-        {% if block.type == 'view' %}
-          <article class="rh-current-view" {{ block.shopify_attributes }}><span>{{ block.settings.number }} — {{ block.settings.category }}{% if block.settings.date != blank %} / {{ block.settings.date }}{% endif %}</span><p>{{ block.settings.text }}</p></article>
-        {% endif %}
-      {% endfor %}
-    </div>
-
     <div class="rh-process-intro"><span class="eyebrow">OUR RESEARCH PROCESS</span><h2>{{ section.settings.process_heading }}</h2></div>
     <div class="rh-process">
       {% for block in section.blocks %}
