@@ -9,10 +9,11 @@
  */
 {
   "current": {
+    "logo": "shopify://shop_images/rh-capital-obelisk-black.svg",
     "wordmark": "R&H Capital",
     "background": "#F5F2E9",
     "foreground": "#171717",
-    "gold": "#c49322",
+    "gold": "#C59423",
     "border": "#c9c4b8",
     "muted": "#68655d",
     "type_scale": "compact",
