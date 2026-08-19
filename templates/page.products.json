@@ -32,7 +32,8 @@
         "heading": "Our newsletters.",
         "description": "A considered briefing on the week's macro and market developments, with a focused note on the questions that matter for your research.",
         "link": "/pages/r-h-intelligence",
-        "link_text": "Join free"
+        "link_text": "Join free",
+        "image": "shopify://shop_images/RnH_Capital_Market_Intelligence.png"
       }
     },
     "intelligence": {
@@ -47,5 +48,11 @@
       "settings": {}
     }
   },
-  "order": ["hero","products","newsletter_feature","intelligence","main"]
+  "order": [
+    "hero",
+    "products",
+    "newsletter_feature",
+    "intelligence",
+    "main"
+  ]
 }
