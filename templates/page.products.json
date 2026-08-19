@@ -24,45 +24,9 @@
         "heading": "Research, designed for use."
       }
     },
-    "selected_work": {
-      "type": "selected-work",
-      "blocks": {
-        "work_1": {
-          "type": "work",
-          "settings": {
-            "number": "01",
-            "category": "RESEARCH",
-            "date": "",
-            "title": "R&H April Macro Summary",
-            "description": "Selected R&H research document.",
-            "link": "https://1drv.ms/u/c/f6f8a6c897c4a7f0/AcKiWurVEBFOj9tJ4ipRK4E",
-            "link_text": "OPEN DOCUMENT",
-            "external": true
-          }
-        },
-        "work_2": {
-          "type": "work",
-          "settings": {
-            "number": "02",
-            "category": "RESEARCH",
-            "date": "",
-            "title": "R&H Oracle Outlook",
-            "description": "Selected R&H research document.",
-            "link": "https://1drv.ms/u/c/f6f8a6c897c4a7f0/ARYNTOftbxBLkFpR2bmZjC4",
-            "link_text": "OPEN DOCUMENT",
-            "external": true
-          }
-        }
-      },
-      "block_order": [
-        "work_1",
-        "work_2"
-      ],
-      "settings": {
-        "eyebrow": "R&H / SELECTED WORK",
-        "heading": "Selected work.",
-        "intro": "A selection of previous RH Capital research, analysis and market work."
-      }
+    "newsletter": {
+      "type": "newsletter-signup",
+      "settings": {}
     },
     "intelligence": {
       "type": "page-intelligence",
@@ -79,7 +43,7 @@
   "order": [
     "hero",
     "products",
-    "selected_work",
+    "newsletter",
     "intelligence",
     "main"
   ]
