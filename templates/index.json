@@ -13,7 +13,7 @@
       "type": "hero-rh",
       "settings": {
         "eyebrow": "Independent finance company / UK",
-        "heading": "Building a\nnew\ngeneration\nof macro\nresearch.",
+        "heading": "Building the future\nof macro traders and research",
         "description": "Independent market research, macroeconomic insight, and active trading experience.",
         "primary_label": "Explore R&H",
         "primary_link": "",
@@ -109,7 +109,11 @@
         "heading": "R&H Intelligence",
         "description": "Research, market views and investment intelligence from R&H Capital.",
         "button_label": "Subscribe",
-        "note": "By subscribing, you agree to receive R&H communications. Free to join. Leave whenever you like."
+        "note": "By subscribing, you agree to receive R&H communications. Free to join. Leave whenever you like.",
+        "report_one_title": "R&H April Macro Summary",
+        "report_one_url": "",
+        "report_two_title": "R&H Oracle Outlook",
+        "report_two_url": ""
       }
     }
   },
