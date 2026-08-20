@@ -37,12 +37,68 @@
         "mode": "about",
         "kicker": "what we are looking for"
       }
+    },
+    "selected_work_FmnEqK": {
+      "type": "selected-work",
+      "blocks": {
+        "work_KHFcCE": {
+          "type": "work",
+          "settings": {
+            "number": "01",
+            "category": "MACRO",
+            "date": "",
+            "title": "Experience",
+            "description": "Analysis of underlying inflation dynamics, energy transmission and Federal Reserve policy.",
+            "link": "",
+            "link_text": "VIEW RESEARCH",
+            "external": true
+          }
+        },
+        "work_jP6kWH": {
+          "type": "work",
+          "settings": {
+            "number": "02",
+            "category": "EQUITIES",
+            "date": "",
+            "title": "Employability",
+            "description": "Analysis of underlying inflation dynamics, energy transmission and Federal Reserve policy.",
+            "link": "",
+            "link_text": "VIEW RESEARCH",
+            "external": true
+          }
+        },
+        "work_qPgpd4": {
+          "type": "work",
+          "settings": {
+            "number": "03",
+            "category": "RATES",
+            "date": "",
+            "title": "Rapid growth company",
+            "description": "Want to be part of next Nvidia??",
+            "link": "",
+            "link_text": "VIEW RESEARCH",
+            "external": true
+          }
+        }
+      },
+      "block_order": [
+        "work_KHFcCE",
+        "work_jP6kWH",
+        "work_qPgpd4"
+      ],
+      "name": "Products — Selected Work",
+      "settings": {
+        "eyebrow": "R&H / SELECTED WORK",
+        "heading": "What's in it for you?",
+        "intro": "A selection of previous RH Capital research, analysis and market work."
+      }
     }
   },
   "order": [
     "hero",
     "intelligence",
     "main",
-    "page_intelligence_3DdQT3"
+    "page_intelligence_3DdQT3",
+    "selected_work_FmnEqK"
   ]
 }
