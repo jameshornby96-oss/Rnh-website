@@ -11,6 +11,7 @@
   "sections": {
     "hero": {
       "type": "page-hero",
+      "disabled": true,
       "settings": {
         "eyebrow": "RH Capital / Founders",
         "heading": "A practice built from lived markets.",
