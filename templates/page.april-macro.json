@@ -9,12 +9,12 @@
  */
 {
   "sections": {
-    "report_viewer": {
+    "readable_pages": {
       "type": "report-pages",
       "settings": {}
     }
   },
   "order": [
-    "report_viewer"
+    "readable_pages"
   ]
 }
