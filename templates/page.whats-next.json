@@ -12,7 +12,7 @@
     "hero": {
       "type": "page-hero",
       "settings": {
-        "eyebrow": "RH Capital / What's next",
+        "eyebrow": "R&H Capital / What's next",
         "heading": "Our Trajectory",
         "description": ""
       }
@@ -75,7 +75,7 @@
       ],
       "name": "Careers — Path Forward",
       "settings": {
-        "eyebrow": "RH CAPITAL / FUTURE PATH",
+        "eyebrow": "R&H CAPITAL / FUTURE PATH",
         "heading": "The path forward.",
         "intro": ""
       }
