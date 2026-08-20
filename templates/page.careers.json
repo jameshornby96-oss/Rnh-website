@@ -28,11 +28,20 @@
       "type": "main-page",
       "disabled": true,
       "settings": {}
+    },
+    "page_intelligence_3DdQT3": {
+      "type": "page-intelligence",
+      "name": "Page intelligence",
+      "settings": {
+        "mode": "about",
+        "kicker": "A SYSTEM FOR INDEPENDENT THINKING"
+      }
     }
   },
   "order": [
     "hero",
     "intelligence",
-    "main"
+    "main",
+    "page_intelligence_3DdQT3"
   ]
 }
