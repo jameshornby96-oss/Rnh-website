@@ -12,7 +12,7 @@
     "hero": {
       "type": "page-hero",
       "settings": {
-        "eyebrow": "RH Capital / Products",
+        "eyebrow": "R&H Capital / Products",
         "heading": "Intelligence you can work with.",
         "description": "Research products are currently in development. Join R&H Intelligence for first access."
       }
@@ -31,7 +31,7 @@
       "type": "page-intelligence",
       "settings": {
         "mode": "products",
-        "kicker": "THE R&H MAIN CURRENT PRODUCTS"
+        "kicker": "THE R&H MAIN PRODUCTS"
       }
     },
     "newsletter_feature": {
