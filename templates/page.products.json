@@ -50,6 +50,21 @@
       "type": "main-page",
       "disabled": true,
       "settings": {}
+    },
+    "newsletter_signup_WM3zqB": {
+      "type": "newsletter-signup",
+      "name": "Newsletter sign-up",
+      "settings": {
+        "eyebrow": "R&H / INTELLIGENCE",
+        "heading": "R&H Intelligence",
+        "description": "Research, market views and investment intelligence from R&H Capital.",
+        "button_label": "Subscribe",
+        "note": "By subscribing, you agree to receive R&H communications. Free to join. Leave whenever you like.",
+        "report_one_title": "R&H April Macro Summary",
+        "report_one_url": "",
+        "report_two_title": "R&H Oracle Outlook",
+        "report_two_url": ""
+      }
     }
   },
   "order": [
@@ -57,6 +72,7 @@
     "products",
     "intelligence",
     "newsletter_feature",
-    "main"
+    "main",
+    "newsletter_signup_WM3zqB"
   ]
 }
