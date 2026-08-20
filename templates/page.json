@@ -19,6 +19,7 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
     },
     "careers_path_forward_iXVM4y": {
