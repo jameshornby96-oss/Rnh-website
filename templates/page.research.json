@@ -211,24 +211,10 @@
             "link_text": "READ PAPER",
             "external": true
           }
-        },
-        "paper_2": {
-          "type": "work",
-          "settings": {
-            "number": "02",
-            "category": "RESEARCH",
-            "date": "",
-            "title": "R&H Oracle Outlook",
-            "description": "A focused R&H research note on Oracle, market expectations and the investment case.",
-            "link": "https://cdn.shopify.com/s/files/1/0960/3517/6714/files/rnh-oracle-report-original-format.pdf?v=1787141943",
-            "link_text": "READ PAPER",
-            "external": true
-          }
         }
       },
       "block_order": [
-        "paper_1",
-        "paper_2"
+        "paper_1"
       ],
       "settings": {
         "eyebrow": "R&H / SELECTED PAPERS",
