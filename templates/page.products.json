@@ -19,11 +19,19 @@
     },
     "products": {
       "type": "featured-products",
+      "disabled": true,
       "settings": {
         "label": "R&H / PRODUCTS",
         "heading": "Research products / coming soon.",
         "collection": "",
         "limit": 3
+      }
+    },
+    "intelligence": {
+      "type": "page-intelligence",
+      "settings": {
+        "mode": "products",
+        "kicker": "THE R&H MAIN CURRENT PRODUCTS"
       }
     },
     "newsletter_feature": {
@@ -38,13 +46,6 @@
         "link_text": "Join free"
       }
     },
-    "intelligence": {
-      "type": "page-intelligence",
-      "settings": {
-        "mode": "products",
-        "kicker": "THE R&H MAIN CURRENT PRODUCTS"
-      }
-    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -54,8 +55,8 @@
   "order": [
     "hero",
     "products",
-    "newsletter_feature",
     "intelligence",
+    "newsletter_feature",
     "main"
   ]
 }
