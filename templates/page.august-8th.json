@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "report_viewer": {
+      "type": "report-viewer",
+      "settings": {
+        "eyebrow": "R&H / RESEARCH PAPER / 02",
+        "title": "R&H August 8th",
+        "intro": "R&H's US macro outlook and a focused view on the next Federal Reserve move.",
+        "pdf_url": "https://cdn.shopify.com/s/files/1/0960/3517/6714/files/RnH_Capital_US_Macro_Outlook_Fed_Moves.pdf?v=1787226932"
+      }
+    }
+  },
+  "order": [
+    "report_viewer"
+  ]
+}
