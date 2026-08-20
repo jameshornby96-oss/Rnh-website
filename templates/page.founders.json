@@ -18,6 +18,16 @@
         "description": ""
       }
     },
+    "editorial_intro_t4TApj": {
+      "type": "editorial-intro",
+      "name": "Editorial intro",
+      "settings": {
+        "label": "Our story",
+        "text": "R&H has been a long term dream since a young age, we have always envisioned running a company ever since we started our first side hustles 5 years ago, since then we have generated 5 figures in profit from prop firms and have been building interactive macro dashboard on notion for the past past 15 months.  In this time we have also been producing macro reports , demo newsletters and our own deep insight into advanced macro strategies.",
+        "link_label": "",
+        "link": ""
+      }
+    },
     "profiles": {
       "type": "founder-profiles",
       "blocks": {
@@ -48,11 +58,12 @@
       ],
       "settings": {
         "eyebrow": "RH CAPITAL / PEOPLE",
-        "heading": "Meet your co founders..."
+        "heading": "Meet your co-founders..."
       }
     },
     "intro": {
       "type": "editorial-intro",
+      "disabled": true,
       "settings": {
         "label": "People",
         "text": "RH Capital is guided by curiosity, accountability, and a belief that a well-examined process has more value than a loud prediction.",
@@ -62,11 +73,13 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
     }
   },
   "order": [
     "hero",
+    "editorial_intro_t4TApj",
     "profiles",
     "intro",
     "main"
