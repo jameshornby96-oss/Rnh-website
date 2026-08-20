@@ -53,6 +53,7 @@
     },
     "intro": {
       "type": "editorial-intro",
+      "disabled": true,
       "settings": {
         "label": "People",
         "text": "RH Capital is guided by curiosity, accountability, and a belief that a well-examined process has more value than a loud prediction.",
@@ -62,13 +63,25 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
+    },
+    "editorial_intro_3HaUMm": {
+      "type": "editorial-intro",
+      "name": "Editorial intro",
+      "settings": {
+        "label": "The R&H approach",
+        "text": "We have been dreaming of a business ever since we started our first side hustles 6 years ago. Since then, we have generated 5 figures from proprietary firms, built a macro based systematic approach and began building track record and started building our own interactive investing terminal. Now we focused on sharing our insights",
+        "link_label": "",
+        "link": ""
+      }
     }
   },
   "order": [
     "hero",
     "profiles",
     "intro",
-    "main"
+    "main",
+    "editorial_intro_3HaUMm"
   ]
 }
