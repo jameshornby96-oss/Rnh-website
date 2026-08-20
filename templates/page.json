@@ -1,1 +1,93 @@
-{"sections":{"hero":{"type":"page-hero","settings":{}},"main":{"type":"main-page","settings":{}}},"order":["hero","main"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "eyebrow": "RH Capital / UK",
+        "heading": "",
+        "description": ""
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "careers_path_forward_iXVM4y": {
+      "type": "careers-path-forward",
+      "blocks": {
+        "stage_geEd6z": {
+          "type": "stage",
+          "settings": {
+            "number": "01",
+            "label": "STEPPING STONE",
+            "title": "Build the research foundation",
+            "description": "Last 15 months this has been built with other notion dashboard, macro summaries, newsletters and trading experience."
+          }
+        },
+        "stage_bCfLgE": {
+          "type": "stage",
+          "settings": {
+            "number": "02",
+            "label": "STEPPING STONE",
+            "title": "Expand RH Intelligence",
+            "description": "Currently where we are, working on expanding our systems with bi-weekly newsletters available to the public alongside high level macro reports and stock analysis. Additionally providing live updates across the macro sphere+geo-politics."
+          }
+        },
+        "stage_bUzM8r": {
+          "type": "stage",
+          "settings": {
+            "number": "03",
+            "label": "STEPPING STONE",
+            "title": "Larger team, more capital and stronger track record.",
+            "description": "Here is the next stage where we are hoping to progress to , Depositing 5 figures more funds into our portfolios , establishing a track record and adding a quantitive element to R&H with some recruitments being made."
+          }
+        },
+        "stage_UTezBD": {
+          "type": "stage",
+          "settings": {
+            "number": "04",
+            "label": "STEPPING STONE",
+            "title": "Push for Capital",
+            "description": "Here we will be looking to be a multi 7 figure asset manger with a strong proved track record , wide spread audience and large community,"
+          }
+        },
+        "stage_HjkUEJ": {
+          "type": "stage",
+          "settings": {
+            "number": "05",
+            "label": "STEPPING STONE",
+            "title": "R&H expansion into other industries such as asset management, farming and real- estate.",
+            "description": "The last battle will be too diversify R&H into a multi-sector firm with a diversified income portfolio and large balance sheet."
+          }
+        }
+      },
+      "block_order": [
+        "stage_geEd6z",
+        "stage_bCfLgE",
+        "stage_bUzM8r",
+        "stage_UTezBD",
+        "stage_HjkUEJ"
+      ],
+      "name": "Careers — Path Forward",
+      "settings": {
+        "eyebrow": "RH CAPITAL / FUTURE PATH",
+        "heading": "The path forward.",
+        "intro": "A deliberate progression towards a broader, more durable market practice."
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "main",
+    "careers_path_forward_iXVM4y"
+  ]
+}
