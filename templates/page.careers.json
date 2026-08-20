@@ -19,6 +19,7 @@
     },
     "intelligence": {
       "type": "page-intelligence",
+      "disabled": true,
       "settings": {
         "mode": "careers",
         "kicker": "THE R&H WORKING STANDARD"
