@@ -13,13 +13,9 @@
       "type": "page-hero",
       "settings": {
         "eyebrow": "RH Capital / What's next",
-        "heading": "The next view begins here.",
+        "heading": "Our Trajectory",
         "description": ""
       }
-    },
-    "main": {
-      "type": "main-page",
-      "settings": {}
     },
     "careers_path_forward_n7rbGi": {
       "type": "careers-path-forward",
@@ -81,8 +77,12 @@
       "settings": {
         "eyebrow": "RH CAPITAL / FUTURE PATH",
         "heading": "The path forward.",
-        "intro": "A deliberate progression towards a broader, more durable market practice."
+        "intro": ""
       }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {}
     }
   },
   "order": [
