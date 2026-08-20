@@ -211,10 +211,24 @@
             "link_text": "READ PAPER",
             "external": false
           }
+        },
+        "paper_2": {
+          "type": "work",
+          "settings": {
+            "number": "02",
+            "category": "RESEARCH",
+            "date": "",
+            "title": "R&H August 8th",
+            "description": "R&H's US macro outlook and a focused view on the next Federal Reserve move.",
+            "link": "/pages/research?view=august-8th",
+            "link_text": "READ PAPER",
+            "external": false
+          }
         }
       },
       "block_order": [
-        "paper_1"
+        "paper_1",
+        "paper_2"
       ],
       "settings": {
         "eyebrow": "R&H / SELECTED PAPERS",
