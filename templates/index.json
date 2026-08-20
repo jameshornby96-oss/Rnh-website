@@ -95,6 +95,7 @@
     },
     "products": {
       "type": "featured-products",
+      "disabled": true,
       "settings": {
         "label": "Products coming soon",
         "heading": "For the traders wanting real progress...",
