@@ -1,1 +1,30 @@
-<section class="rh-report-pages section"><div class="page-width"><header class="rh-report-pages__head"><span class="eyebrow">R&H / RESEARCH PAPER / 01</span><h1>R&H April Macro Summary</h1><p>A complete, in-page reading version of the R&H April Macro Summary.</p></header><div class="rh-report-pages__document">{% for page in (1..5) %}{% assign asset_name = 'april-' | append: page | append: '.png' %}{% assign alt_text = 'R&H April Macro Summary - Page ' | append: page %}<figure class="rh-report-pages__page">{{ asset_name | asset_url | image_tag: loading: 'lazy', widths: '640,960,1280,1600', alt: alt_text }}</figure>{% endfor %}</div></div></section><style>.rh-report-pages{border-top:1px solid var(--border);padding-block:clamp(3rem,7vw,7rem)}.rh-report-pages__head{max-width:56rem;margin-bottom:clamp(2.5rem,5vw,5rem)}.rh-report-pages__head .eyebrow{color:var(--gold)}.rh-report-pages__head h1{font-size:clamp(2.8rem,6vw,6.5rem);font-weight:500;letter-spacing:-.06em;line-height:.92;margin:1rem 0}.rh-report-pages__head p{font-size:1.05rem;line-height:1.55}.rh-report-pages__document{max-width:58rem;margin:auto}.rh-report-pages__page{margin:0 0 2rem;border:1px solid var(--border);background:#fff;line-height:0}.rh-report-pages__page img{display:block;width:100%;height:auto}@media(max-width:749px){.rh-report-pages{padding-top:2rem}.rh-report-pages__head h1{font-size:clamp(2.5rem,13vw,4.2rem)}.rh-report-pages__page{margin-bottom:1rem}}</style>{% schema %}{"name":"R&H April Macro pages","settings":[]} {% endschema %}
+<section class="rh-report-pages section">
+  <div class="page-width">
+    <header class="rh-report-pages__head">
+      <span class="eyebrow">R&H / RESEARCH PAPER / 01</span>
+      <h1>R&H April Macro Summary</h1>
+      <p>A complete, in-page reading version of the R&H April Macro Summary.</p>
+    </header>
+    <div class="rh-report-pages__document">
+      <figure class="rh-report-pages__page"><img src="{{ 'april-1.png' | asset_url }}" loading="eager" alt="R&H April Macro Summary - Page 1"></figure>
+      <figure class="rh-report-pages__page"><img src="{{ 'april-2.png' | asset_url }}" loading="lazy" alt="R&H April Macro Summary - Page 2"></figure>
+      <figure class="rh-report-pages__page"><img src="{{ 'april-3.png' | asset_url }}" loading="lazy" alt="R&H April Macro Summary - Page 3"></figure>
+      <figure class="rh-report-pages__page"><img src="{{ 'april-4.png' | asset_url }}" loading="lazy" alt="R&H April Macro Summary - Page 4"></figure>
+      <figure class="rh-report-pages__page"><img src="{{ 'april-5.png' | asset_url }}" loading="lazy" alt="R&H April Macro Summary - Page 5"></figure>
+    </div>
+  </div>
+</section>
+<style>
+.rh-report-pages{border-top:1px solid var(--border);padding-block:clamp(3rem,7vw,7rem)}
+.rh-report-pages__head{max-width:56rem;margin-bottom:clamp(2.5rem,5vw,5rem)}
+.rh-report-pages__head .eyebrow{color:var(--gold)}
+.rh-report-pages__head h1{font-size:clamp(2.8rem,6vw,6.5rem);font-weight:500;letter-spacing:-.06em;line-height:.92;margin:1rem 0}
+.rh-report-pages__head p{font-size:1.05rem;line-height:1.55}
+.rh-report-pages__document{max-width:58rem;margin:auto}
+.rh-report-pages__page{margin:0 0 2rem;border:1px solid var(--border);background:#fff;line-height:0}
+.rh-report-pages__page img{display:block;width:100%;height:auto}
+@media(max-width:749px){.rh-report-pages{padding-top:2rem}.rh-report-pages__head h1{font-size:clamp(2.5rem,13vw,4.2rem)}.rh-report-pages__page{margin-bottom:1rem}}
+</style>
+{% schema %}
+{"name":"R&H April Macro pages","settings":[]}
+{% endschema %}
