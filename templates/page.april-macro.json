@@ -10,7 +10,7 @@
 {
   "sections": {
     "report_viewer": {
-      "type": "report-viewer",
+      "type": "report-pages",
       "settings": {
         "eyebrow": "R&H / RESEARCH PAPER / 01",
         "title": "R&H April Macro Summary",
