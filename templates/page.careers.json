@@ -92,6 +92,62 @@
         "heading": "What's in it for you?",
         "intro": ""
       }
+    },
+    "careers_what_we_seek": {
+      "type": "careers-what-we-seek",
+      "settings": {
+        "eyebrow": "R&H / CAREERS",
+        "heading": "WHAT WE'RE LOOKING FOR",
+        "intro": "Bright individuals with different skillsets and a genuine interest in markets.",
+        "closing_label": "ALWAYS OPEN TO A CONVERSATION",
+        "closing_text": "We are always interested in meeting thoughtful people. Tell us your plan.",
+        "link": "/pages/contact",
+        "link_text": "GET IN TOUCH"
+      },
+      "blocks": {
+        "model_building": {
+          "type": "quality",
+          "settings": {
+            "number": "01",
+            "label": "CAPABILITY",
+            "title": "MODEL BUILDING",
+            "description": "Turning a view into a framework that can be tested."
+          }
+        },
+        "quantitative_thinking": {
+          "type": "quality",
+          "settings": {
+            "number": "02",
+            "label": "CAPABILITY",
+            "title": "QUANTITATIVE THINKING",
+            "description": "Comfort with data, probability and disciplined analysis."
+          }
+        },
+        "macro_markets": {
+          "type": "quality",
+          "settings": {
+            "number": "03",
+            "label": "CAPABILITY",
+            "title": "MACRO & MARKETS",
+            "description": "Curiosity about the forces moving economies, assets and opportunities."
+          }
+        },
+        "hunger": {
+          "type": "quality",
+          "settings": {
+            "number": "04",
+            "label": "CAPABILITY",
+            "title": "HUNGER",
+            "description": "High standards, intellectual energy and the willingness to do the work."
+          }
+        }
+      },
+      "block_order": [
+        "model_building",
+        "quantitative_thinking",
+        "macro_markets",
+        "hunger"
+      ]
     }
   },
   "order": [
@@ -99,6 +155,7 @@
     "intelligence",
     "main",
     "page_intelligence_3DdQT3",
-    "selected_work_FmnEqK"
+    "selected_work_FmnEqK",
+    "careers_what_we_seek"
   ]
 }
