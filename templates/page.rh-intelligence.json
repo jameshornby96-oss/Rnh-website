@@ -31,9 +31,13 @@
       "settings": {
         "eyebrow": "R&H / INTELLIGENCE",
         "heading": "Join the free newsletter.",
-        "description": "Weekly notes on macro, markets and disciplined decision-making. No noise, no charge.",
+        "description": "A bi-weekly briefing on the week's macro and market developments with a focus note on the most miss-priced topics.",
         "button_label": "Join free",
-        "note": "Free to join. Leave whenever you like."
+        "note": "Free to join. Leave whenever you like.",
+        "report_one_title": "R&H April Macro Summary",
+        "report_one_url": "",
+        "report_two_title": "R&H Oracle Outlook",
+        "report_two_url": ""
       }
     }
   },
