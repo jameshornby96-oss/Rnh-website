@@ -17,16 +17,6 @@
         "description": "Research products are currently in development. Join R&H Intelligence for first access."
       }
     },
-    "products": {
-      "type": "featured-products",
-      "disabled": true,
-      "settings": {
-        "label": "R&H / PRODUCTS",
-        "heading": "Research products / coming soon.",
-        "collection": "",
-        "limit": 3
-      }
-    },
     "intelligence": {
       "type": "page-intelligence",
       "settings": {
@@ -69,7 +59,6 @@
   },
   "order": [
     "hero",
-    "products",
     "intelligence",
     "newsletter_feature",
     "main",
