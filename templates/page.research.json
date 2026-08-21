@@ -17,6 +17,46 @@
         "description": "Independent investment research across macro, markets, rates, FX, commodities, equities and credit."
       }
     },
+    "selected_papers": {
+      "type": "selected-work",
+      "blocks": {
+        "paper_1": {
+          "type": "work",
+          "settings": {
+            "number": "01",
+            "category": "RESEARCH",
+            "date": "",
+            "title": "R&H April Macro Summary",
+            "description": "A concise R&H view on the prevailing macro regime and the questions shaping the next decision.",
+            "link": "/pages/research?view=april-macro",
+            "link_text": "READ PAPER",
+            "external": false
+          }
+        },
+        "paper_2": {
+          "type": "work",
+          "settings": {
+            "number": "02",
+            "category": "RESEARCH",
+            "date": "",
+            "title": "R&H August 8th",
+            "description": "R&H's US macro outlook and a focused view on the next Federal Reserve move.",
+            "link": "/pages/research?view=august-8th",
+            "link_text": "READ PAPER",
+            "external": false
+          }
+        }
+      },
+      "block_order": [
+        "paper_1",
+        "paper_2"
+      ],
+      "settings": {
+        "eyebrow": "R&H / SELECTED PAPERS",
+        "heading": "Selected papers.",
+        "intro": "An example of what we  produce at R&H..."
+      }
+    },
     "command_centre": {
       "type": "research-command-centre",
       "blocks": {
@@ -196,46 +236,6 @@
       "disabled": true,
       "settings": {}
     },
-    "selected_papers": {
-      "type": "selected-work",
-      "blocks": {
-        "paper_1": {
-          "type": "work",
-          "settings": {
-            "number": "01",
-            "category": "RESEARCH",
-            "date": "",
-            "title": "R&H April Macro Summary",
-            "description": "A concise R&H view on the prevailing macro regime and the questions shaping the next decision.",
-            "link": "/pages/research?view=april-macro",
-            "link_text": "READ PAPER",
-            "external": false
-          }
-        },
-        "paper_2": {
-          "type": "work",
-          "settings": {
-            "number": "02",
-            "category": "RESEARCH",
-            "date": "",
-            "title": "R&H August 8th",
-            "description": "R&H's US macro outlook and a focused view on the next Federal Reserve move.",
-            "link": "/pages/research?view=august-8th",
-            "link_text": "READ PAPER",
-            "external": false
-          }
-        }
-      },
-      "block_order": [
-        "paper_1",
-        "paper_2"
-      ],
-      "settings": {
-        "eyebrow": "R&H / SELECTED PAPERS",
-        "heading": "Selected papers.",
-        "intro": "An example of what we  produce at R&H..."
-      }
-    },
     "track_record": {
       "type": "track-record",
       "disabled": true,
@@ -257,9 +257,9 @@
   },
   "order": [
     "hero",
+    "selected_papers",
     "command_centre",
     "archive",
-    "selected_papers",
     "track_record"
   ]
 }
