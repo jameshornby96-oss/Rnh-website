@@ -1,1 +1,87 @@
-<div class="ticker"><div class="ticker-track">{% for i in (1..2) %}{% for block in section.blocks %}<span {{ block.shopify_attributes }}>{{ block.settings.text }}</span>{% endfor %}{% endfor %}</div></div>{% schema %}{"name":"Ticker","blocks":[{"type":"item","name":"Ticker item","settings":[{"type":"text","id":"text","label":"Text","default":"Research before risk"}]}],"presets":[{"name":"Ticker","blocks":[{"type":"item","settings":{"text":"Before risk / London / UK"}},{"type":"item","settings":{"text":"Discipline > drama / R&H / 01"}},{"type":"item","settings":{"text":"Five-figure ambition / long view, short feedback loop"}},{"type":"item","settings":{"text":"Research before risk"}}]}]}{% endschema %}
+<div class="ticker" data-market-ticker data-market-url="https://rh-market-ticker.james-hornby96.workers.dev" aria-label="Market data ticker">
+  <div class="ticker-track" data-market-ticker-track>
+    {% for i in (1..2) %}
+      {% for block in section.blocks %}
+        <span {{ block.shopify_attributes }}>{{ block.settings.text }}</span>
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div>
+<script>
+(() => {
+  const ticker = document.querySelector('[data-market-ticker]');
+  if (!ticker || ticker.dataset.marketTickerReady) return;
+  ticker.dataset.marketTickerReady = 'true';
+  const track = ticker.querySelector('[data-market-ticker-track]');
+
+  const formatPrice = (value) => {
+    const number = Number(value);
+    if (!Number.isFinite(number)) return '—';
+    return number >= 100 ? number.toFixed(2) : number.toFixed(4);
+  };
+  const formatChange = (value) => {
+    const number = Number(value);
+    if (!Number.isFinite(number)) return '';
+    return (number >= 0 ? '+' : '') + number.toFixed(2) + '%';
+  };
+  const pickQuote = (data, key) => data[key] || data[key.replace('/', '')] || {};
+
+  fetch(ticker.dataset.marketUrl, { headers: { Accept: 'application/json' } })
+    .then((response) => {
+      if (!response.ok) throw new Error('Market feed unavailable');
+      return response.json();
+    })
+    .then((data) => {
+      const instruments = [
+        ['SPX', pickQuote(data, 'SPY')],
+        ['NASDAQ', pickQuote(data, 'QQQ')],
+        ['DOLLAR', pickQuote(data, 'EUR/USD')]
+      ].filter((item) => item[1] && (item[1].close || item[1].price || item[1].last));
+
+      if (!instruments.length) throw new Error('No usable market quotes');
+
+      const items = instruments.map((item) => {
+        const label = item[0];
+        const quote = item[1];
+        const price = quote.close || quote.price || quote.last;
+        const change = quote.percent_change || quote.change_percent || quote.change_pct;
+        const direction = Number(change) >= 0 ? 'is-positive' : 'is-negative';
+        return '<span class="ticker-market"><b>' + label + '</b> <i>' + formatPrice(price) + '</i> <em class="' + direction + '">' + formatChange(change) + '</em></span>';
+      }).join('');
+
+      track.innerHTML = items + items;
+      ticker.classList.add('ticker--live');
+    })
+    .catch(() => ticker.classList.add('ticker--fallback'));
+})();
+</script>
+{% schema %}
+{
+  "name": "Ticker",
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Ticker item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Fallback text",
+          "default": "Research before risk"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ticker",
+      "blocks": [
+        {"type": "item", "settings": {"text": "Before risk / London / UK"}},
+        {"type": "item", "settings": {"text": "Discipline > drama / R&H / 01"}},
+        {"type": "item", "settings": {"text": "Five-figure ambition / long view, short feedback loop"}},
+        {"type": "item", "settings": {"text": "Research before risk"}}
+      ]
+    }
+  ]
+}
+{% endschema %}
