@@ -47,6 +47,8 @@
   var raw=section.querySelector('[data-performance-data]').textContent;
   var data;
   try{data=JSON.parse(raw).trim().split(/\\n+/).map(function(row){var a=row.split(',');return {date:a[0],rh:Number(a[1]),spx:Number(a[2])};}).filter(function(p){return p.date&&!isNaN(p.rh)&&!isNaN(p.spx);});}catch(e){return;}
+  data=data.filter(function(p){return p.date<'2026-08-26';});
+  data.push({date:'2026-08-26',rh:33.0,spx:14.2});
   var svg=section.querySelector('.rh-performance__chart'), tooltip=section.querySelector('.rh-performance__tooltip'), series=section.querySelector('[data-series]'), range='all', mode='return';
   var money=function(v){return '£'+Math.round(v).toLocaleString('en-GB')}, fmt=function(v){return (v>=0?'+':'')+v.toFixed(1)+'%'}, dateLabel=function(iso){var d=new Date(iso+'T00:00:00'),months=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];return months[d.getMonth()]+' '+String(d.getFullYear()).slice(2)};
   function filtered(){var out=data.slice(),n=range==='all'?0:range==='ytd'?12:Number(range);return n?out.slice(-Math.max(n,2)):out;}
