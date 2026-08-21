@@ -1,4 +1,4 @@
-<div class="ticker" data-market-ticker data-market-url="https://rh-market-ticker.james-hornby96.workers.dev" aria-label="Market data ticker">
+<div class="ticker" data-market-ticker data-market-url="https://rh-market-ticker.james-hornby96.workers.dev" aria-label="Live market data ticker">
   <div class="ticker-track" data-market-ticker-track>
     {% for i in (1..2) %}
       {% for block in section.blocks %}
@@ -7,6 +7,39 @@
     {% endfor %}
   </div>
 </div>
+
+<style>
+  .ticker--live .ticker-track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: clamp(2rem, 9vw, 10rem);
+    animation: none;
+  }
+  .ticker--live .ticker-market {
+    display: inline-flex;
+    align-items: baseline;
+    gap: .55rem;
+    margin: 0;
+  }
+  .ticker--live .ticker-market b {
+    font-size: 10px;
+    letter-spacing: .14em;
+  }
+  .ticker--live .ticker-market i,
+  .ticker--live .ticker-market em {
+    font-style: normal;
+  }
+  .ticker--live .ticker-market em.is-positive { color: #fff; }
+  .ticker--live .ticker-market em.is-negative { color: #171717; }
+  @media (max-width: 700px) {
+    .ticker--live .ticker-track { gap: 1.25rem; justify-content: space-evenly; }
+    .ticker--live .ticker-market { gap: .3rem; font-size: 8px; }
+    .ticker--live .ticker-market b { font-size: 8px; }
+  }
+</style>
+
 <script>
 (() => {
   const ticker = document.querySelector('[data-market-ticker]');
@@ -46,15 +79,16 @@
         const price = quote.close || quote.price || quote.last;
         const change = quote.percent_change || quote.change_percent || quote.change_pct;
         const direction = Number(change) >= 0 ? 'is-positive' : 'is-negative';
-        return '<span class="ticker-market"><b>' + label + '</b> <i>' + formatPrice(price) + '</i> <em class="' + direction + '">' + formatChange(change) + '</em></span>';
+        return '<span class="ticker-market"><b>' + label + '</b><i>' + formatPrice(price) + '</i><em class="' + direction + '">' + formatChange(change) + '</em></span>';
       }).join('');
 
-      track.innerHTML = items + items;
+      track.innerHTML = items;
       ticker.classList.add('ticker--live');
     })
     .catch(() => ticker.classList.add('ticker--fallback'));
 })();
 </script>
+
 {% schema %}
 {
   "name": "Ticker",
@@ -63,12 +97,7 @@
       "type": "item",
       "name": "Ticker item",
       "settings": [
-        {
-          "type": "text",
-          "id": "text",
-          "label": "Fallback text",
-          "default": "Research before risk"
-        }
+        { "type": "text", "id": "text", "label": "Text", "default": "Research before risk" }
       ]
     }
   ],
@@ -76,10 +105,10 @@
     {
       "name": "Ticker",
       "blocks": [
-        {"type": "item", "settings": {"text": "Before risk / London / UK"}},
-        {"type": "item", "settings": {"text": "Discipline > drama / R&H / 01"}},
-        {"type": "item", "settings": {"text": "Five-figure ambition / long view, short feedback loop"}},
-        {"type": "item", "settings": {"text": "Research before risk"}}
+        { "type": "item", "settings": { "text": "Before risk / London / UK" } },
+        { "type": "item", "settings": { "text": "Discipline > drama / R&H / 01" } },
+        { "type": "item", "settings": { "text": "Five-figure ambition / long view, short feedback loop" } },
+        { "type": "item", "settings": { "text": "Research before risk" } }
       ]
     }
   ]
