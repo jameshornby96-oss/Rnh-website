@@ -1,0 +1,14 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "meta_report": {
+      "type": "meta-report-pages",
+      "settings": {}
+    }
+  },
+  "order": ["meta_report"]
+}
