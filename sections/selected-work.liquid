@@ -2,7 +2,9 @@
   <div class="section-heading"><span class="eyebrow">{{ section.settings.eyebrow }}</span><h2 id="SelectedWork-{{ section.id }}">{{ section.settings.heading }}</h2></div>
   {% if section.settings.intro != blank %}<p class="selected-work__intro">{{ section.settings.intro }}</p>{% endif %}
   <div class="selected-work__list">
+    {% assign has_meta_paper = false %}
     {% for block in section.blocks %}
+      {% if block.settings.number == '03' %}{% assign has_meta_paper = true %}{% endif %}
       <article class="selected-work__row" {{ block.shopify_attributes }}>
         <div class="selected-work__index">{% if block.settings.number != blank %}{{ block.settings.number }}{% else %}{{ forloop.index | prepend: '0' | slice: -2, 2 }}{% endif %}</div>
         {% if block.settings.image != blank %}<div class="selected-work__image">{{ block.settings.image | image_url: width: 640 | image_tag: loading: 'lazy', alt: block.settings.title }}</div>{% endif %}
@@ -10,6 +12,13 @@
         {% if block.settings.link != blank %}<a class="read-link selected-work__link" href="{{ block.settings.link }}"{% if block.settings.external %} target="_blank" rel="noopener"{% endif %}>{{ block.settings.link_text }} ↗</a>{% endif %}
       </article>
     {% endfor %}
+    {% unless has_meta_paper %}
+      <article class="selected-work__row">
+        <div class="selected-work__index">03</div>
+        <div class="selected-work__main"><span class="meta">EQUITIES / AUG 2026</span><h3><a href="/pages/research?view=meta-report-august">R&H Capital Meta Report August</a></h3><p>R&H Capital equity research on Meta Platforms, the AI payoff and valuation.</p></div>
+        <a class="read-link selected-work__link" href="/pages/research?view=meta-report-august">READ PAPER ↗</a>
+      </article>
+    {% endunless %}
   </div>
 </div></section>
 {% schema %}
