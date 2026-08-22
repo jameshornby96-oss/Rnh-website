@@ -45,25 +45,11 @@
             "link_text": "READ PAPER",
             "external": false
           }
-        },
-        "paper_3": {
-          "type": "work",
-          "settings": {
-            "number": "03",
-            "category": "EQUITIES",
-            "date": "AUG 2026",
-            "title": "R&H Capital Meta Report August",
-            "description": "R&H Capital equity research on Meta Platforms, the AI payoff and valuation.",
-            "link": "/pages/research?view=meta-report-august",
-            "link_text": "READ PAPER",
-            "external": false
-          }
         }
       },
       "block_order": [
         "paper_1",
-        "paper_2",
-        "paper_3"
+        "paper_2"
       ],
       "settings": {
         "eyebrow": "R&H / SELECTED PAPERS",
