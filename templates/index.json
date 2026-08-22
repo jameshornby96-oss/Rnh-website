@@ -26,12 +26,37 @@
     "ticker": {
       "type": "ticker",
       "blocks": {
-        "a": { "type": "item", "settings": { "text": "Before risk / London / UK" } },
-        "b": { "type": "item", "settings": { "text": "Discipline > drama / R&H / 01" } },
-        "c": { "type": "item", "settings": { "text": "Five-figure ambition / long view, short feedback loop" } },
-        "d": { "type": "item", "settings": { "text": "Research before risk" } }
+        "a": {
+          "type": "item",
+          "settings": {
+            "text": "Before risk / London / UK"
+          }
+        },
+        "b": {
+          "type": "item",
+          "settings": {
+            "text": "Discipline > drama / R&H / 01"
+          }
+        },
+        "c": {
+          "type": "item",
+          "settings": {
+            "text": "Five-figure ambition / long view, short feedback loop"
+          }
+        },
+        "d": {
+          "type": "item",
+          "settings": {
+            "text": "Research before risk"
+          }
+        }
       },
-      "block_order": ["a", "b", "c", "d"],
+      "block_order": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
       "settings": {}
     },
     "intro": {
@@ -46,7 +71,10 @@
     "research": {
       "type": "research-grid",
       "disabled": true,
-      "settings": { "label": "Latest intelligence", "heading": "Research for decisions that matter." }
+      "settings": {
+        "label": "Latest intelligence",
+        "heading": "Research for decisions that matter."
+      }
     },
     "portfolio_performance": {
       "type": "track-record",
@@ -59,16 +87,21 @@
         "benchmark_return": "+14.2%",
         "since_label": "SINCE INCEPTION",
         "inception": "SEP 2025",
-        "starting_value": "",
-        "performance_data": "2025-09-01,0,0\n2025-10-01,2.8,1.3\n2025-11-01,6.9,2.8\n2025-12-01,5.1,1.6\n2026-01-01,10.8,3.4\n2026-02-01,8.6,4.9\n2026-03-01,14.7,3.2\n2026-04-01,19.3,6.1\n2026-05-01,17.6,7.3\n2026-06-01,23.8,6.2\n2026-07-01,27.1,8.7\n2026-08-26,33.0,14.2",
+        "starting_value": "10,000",
+        "performance_data": "2025-09-01,0,0\\n2025-10-01,2.8,1.3\\n2025-11-01,6.9,2.8\\n2025-12-01,5.1,1.6\\n2026-01-01,10.8,3.4\\n2026-02-01,8.6,4.9\\n2026-03-01,14.7,3.2\\n2026-04-01,19.3,6.1\\n2026-05-01,17.6,7.3\\n2026-06-01,23.8,6.2\\n2026-07-01,27.1,8.7\\n2026-08-01,22.5,9.5\\n2026-09-01,28.4,8.1\\n2026-10-01,31.7,10.4\\n2026-11-01,29.6,11.8\\n2026-12-01,34.1,10.9\\n2027-01-01,33.0,14.2",
         "show_exposure": false,
-        "disclaimer": "Performance shown is an illustrative R&H research/model portfolio. It is not client performance, investment advice or a recommendation. Past performance is not indicative of future results."
+        "disclaimer": "Performance shown is an illustrative R&H research/model portfolio, designed to reflect an Amazon-led equity profile. It is not client performance, investment advice or a recommendation. Past performance is not indicative of future results."
       }
     },
     "products": {
       "type": "featured-products",
       "disabled": true,
-      "settings": { "label": "Products coming soon", "heading": "For the traders wanting real progress...", "collection": "", "limit": 3 }
+      "settings": {
+        "label": "Products coming soon",
+        "heading": "For the traders wanting real progress...",
+        "collection": "",
+        "limit": 3
+      }
     },
     "newsletter": {
       "type": "newsletter-signup",
@@ -85,5 +118,13 @@
       }
     }
   },
-  "order": ["hero", "ticker", "intro", "research", "portfolio_performance", "products", "newsletter"]
+  "order": [
+    "hero",
+    "ticker",
+    "intro",
+    "research",
+    "portfolio_performance",
+    "products",
+    "newsletter"
+  ]
 }
