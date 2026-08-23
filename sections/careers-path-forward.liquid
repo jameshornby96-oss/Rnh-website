@@ -11,8 +11,34 @@
         </article>
       {% endfor %}
     </div>
+    <details class="careers-contact">
+      <summary>GET IN TOUCH <span aria-hidden="true">↗</span></summary>
+      <div class="careers-contact__panel">
+        {% form 'contact', id: 'CareersContactForm' %}
+          {% if form.posted_successfully? %}<p class="careers-contact__status" role="status">Thank you. Your enquiry has been sent.</p>{% endif %}
+          {{ form.errors | default_errors }}
+          <input type="hidden" name="contact[tags]" value="careers-enquiry">
+          <label for="CareersEmail">Email address</label>
+          <input id="CareersEmail" type="email" name="contact[email]" autocomplete="email" required>
+          <label for="CareersMessage">Message</label>
+          <textarea id="CareersMessage" name="contact[body]" rows="6" required placeholder="Tell us a little about yourself and your plan."></textarea>
+          <button type="submit">SEND ENQUIRY <span aria-hidden="true">↗</span></button>
+        {% endform %}
+      </div>
+    </details>
   </div>
 </section>
+<style>
+.careers-contact{margin-top:clamp(3rem,7vw,7rem);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.careers-contact summary{cursor:pointer;list-style:none;padding:1.3rem 0;color:var(--gold);font-size:.75rem;font-weight:600;letter-spacing:.13em}
+.careers-contact summary::-webkit-details-marker{display:none}
+.careers-contact__panel{max-width:42rem;padding:0 0 2rem}
+.careers-contact label{display:block;margin:1.2rem 0 .45rem;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.careers-contact input,.careers-contact textarea{box-sizing:border-box;width:100%;padding:.9rem 0;border:0;border-bottom:1px solid var(--foreground);border-radius:0;background:transparent;color:var(--foreground);font:inherit;outline-offset:4px}
+.careers-contact textarea{resize:vertical;line-height:1.5}
+.careers-contact button{margin-top:1.5rem;padding:0;background:transparent;border:0;border-bottom:1px solid var(--gold);color:var(--gold);font:inherit;font-size:.75rem;font-weight:600;letter-spacing:.13em;cursor:pointer}
+.careers-contact__status{margin:1rem 0;color:var(--gold)}
+</style>
 {% schema %}
 {"name":"Careers — Path Forward","settings":[{"type":"text","id":"eyebrow","label":"Technical label","default":"RH CAPITAL / FUTURE PATH"},{"type":"text","id":"heading","label":"Heading","default":"The path forward."},{"type":"textarea","id":"intro","label":"Introduction","default":"A deliberate progression towards a broader, more durable market practice."}],"blocks":[{"type":"stage","name":"Development stage","settings":[{"type":"text","id":"number","label":"Stage number","default":"01"},{"type":"text","id":"label","label":"Small label","default":"STEPPING STONE"},{"type":"text","id":"title","label":"Title","default":"Build the research foundation"},{"type":"textarea","id":"description","label":"Description","default":"Establish a clear, independent research practice built around disciplined process."}]}],"max_blocks":6,"presets":[{"name":"Careers — Path Forward","blocks":[{"type":"stage","settings":{"number":"01","title":"Build the research foundation"}},{"type":"stage","settings":{"number":"02","title":"Expand RH Intelligence"}},{"type":"stage","settings":{"number":"03","title":"Build the team"}},{"type":"stage","settings":{"number":"04","title":"Expand active market operations"}},{"type":"stage","settings":{"number":"05","title":"Long-term capital management"}}]}]}
 {% endschema %}
