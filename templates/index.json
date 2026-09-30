@@ -78,6 +78,7 @@
     },
     "portfolio_performance": {
       "type": "track-record",
+      "disabled": true,
       "settings": {
         "eyebrow": "PORTFOLIO PERFORMANCE",
         "heading": "Track record.",
