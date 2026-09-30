@@ -129,6 +129,34 @@
             "title": "RISK",
             "detail": "What disproves the thesis?"
           }
+        },
+        "framework_1": {
+          "type": "framework",
+          "settings": {
+            "number": "01",
+            "title": ""
+          }
+        },
+        "framework_2": {
+          "type": "framework",
+          "settings": {
+            "number": "02",
+            "title": ""
+          }
+        },
+        "framework_3": {
+          "type": "framework",
+          "settings": {
+            "number": "03",
+            "title": ""
+          }
+        },
+        "framework_4": {
+          "type": "framework",
+          "settings": {
+            "number": "",
+            "title": "HOW IS THE VIEW TESTED?"
+          }
         }
       },
       "block_order": [
@@ -139,18 +167,22 @@
         "process_2",
         "process_3",
         "process_4",
-        "process_5"
+        "process_5",
+        "framework_1",
+        "framework_2",
+        "framework_3",
+        "framework_4"
       ],
       "settings": {
         "monitor_eyebrow": "R&H MACRO MONITOR",
         "monitor_title": "R&H MACRO MONITOR",
         "monitor_note": "",
         "monitor_disclaimer": "DELAYED / ILLUSTRATIVE",
-        "growth": "Cooling ↓",
+        "growth": "Strong",
         "inflation": "Sticky →",
-        "liquidity": "Improving ↑",
+        "liquidity": "Decreasing",
         "policy": "Restrictive →",
-        "regime": "Late-cycle / Disinflationary",
+        "regime": "Late-cycle / Goldilocks",
         "risk_bias": "Neutral → Risk-on",
         "duration": "Overweight",
         "usd": "Neutral",
