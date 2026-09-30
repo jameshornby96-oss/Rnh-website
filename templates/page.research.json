@@ -129,34 +129,6 @@
             "title": "RISK",
             "detail": "What disproves the thesis?"
           }
-        },
-        "framework_1": {
-          "type": "framework",
-          "settings": {
-            "number": "01",
-            "title": "WHAT MATTERS?"
-          }
-        },
-        "framework_2": {
-          "type": "framework",
-          "settings": {
-            "number": "02",
-            "title": "WHAT IS PRICED?"
-          }
-        },
-        "framework_3": {
-          "type": "framework",
-          "settings": {
-            "number": "03",
-            "title": "WHAT COULD CHANGE?"
-          }
-        },
-        "framework_4": {
-          "type": "framework",
-          "settings": {
-            "number": "04",
-            "title": "HOW IS THE VIEW TESTED?"
-          }
         }
       },
       "block_order": [
@@ -167,11 +139,7 @@
         "process_2",
         "process_3",
         "process_4",
-        "process_5",
-        "framework_1",
-        "framework_2",
-        "framework_3",
-        "framework_4"
+        "process_5"
       ],
       "settings": {
         "monitor_eyebrow": "R&H MACRO MONITOR",
