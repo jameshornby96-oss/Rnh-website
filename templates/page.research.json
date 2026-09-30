@@ -24,11 +24,11 @@
           "type": "work",
           "settings": {
             "number": "01",
-            "category": "RESEARCH",
-            "date": "",
-            "title": "R&H April Macro Summary",
-            "description": "A concise R&H view on the prevailing macro regime and the questions shaping the next decision.",
-            "link": "/pages/research?view=april-macro",
+            "category": "AI & TECHNOLOGY",
+            "date": "01.09.26",
+            "title": "AI: Investment Return, Hyperscalers & Positioning",
+            "description": "R&H Capital's analysis of AI adoption, hyperscaler investment, financing and positioning across the AI stack.",
+            "link": "/pages/ai-analysis",
             "link_text": "READ PAPER",
             "external": false
           }

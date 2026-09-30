@@ -1,16 +1,14 @@
 <section class="rh-report-pages section">
   <div class="page-width">
     <header class="rh-report-pages__head">
-      <span class="eyebrow">R&H / RESEARCH PAPER / 01</span>
-      <h1>R&H April Macro Summary</h1>
-      <p>A complete, in-page reading version of the R&H April Macro Summary.</p>
+      <span class="eyebrow">R&H / AI &amp; TECHNOLOGY / 01</span>
+      <h1>AI: Investment Return, Hyperscalers &amp; Positioning</h1>
+      <p>A complete, in-page reading version of R&amp;H Capital's AI research note from 1 September 2026.</p>
     </header>
     <div class="rh-report-pages__document">
-      <figure class="rh-report-pages__page"><img src="{{ 'april-1.png' | asset_url }}" loading="eager" alt="R&H April Macro Summary - Page 1"></figure>
-      <figure class="rh-report-pages__page"><img src="{{ 'april-2.png' | asset_url }}" loading="lazy" alt="R&H April Macro Summary - Page 2"></figure>
-      <figure class="rh-report-pages__page"><img src="{{ 'april-3.png' | asset_url }}" loading="lazy" alt="R&H April Macro Summary - Page 3"></figure>
-      <figure class="rh-report-pages__page"><img src="{{ 'april-4.png' | asset_url }}" loading="lazy" alt="R&H April Macro Summary - Page 4"></figure>
-      <figure class="rh-report-pages__page"><img src="{{ 'april-5.png' | asset_url }}" loading="lazy" alt="R&H April Macro Summary - Page 5"></figure>
+      {% for page_number in (1..10) %}
+        <figure class="rh-report-pages__page"><img src="{{ 'ai-analysis-' | append: page_number | append: '.png' | asset_url }}" loading="{% if page_number == 1 %}eager{% else %}lazy{% endif %}" alt="AI Investment Return Hyperscalers and Positioning - Page {{ page_number }}"></figure>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -26,5 +24,5 @@
 @media(max-width:749px){.rh-report-pages{padding-top:2rem}.rh-report-pages__head h1{font-size:clamp(2.5rem,13vw,4.2rem)}.rh-report-pages__page{margin-bottom:1rem}}
 </style>
 {% schema %}
-{"name":"R&H April Macro pages","settings":[]}
+{"name":"R&H AI analysis pages","settings":[]}
 {% endschema %}
