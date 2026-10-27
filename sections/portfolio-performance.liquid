@@ -2,7 +2,7 @@
   assign section_id = 'PortfolioPerformance-' | append: section.id
 %}
 
-<section id="{{ section_id }}" class="rh-portfolio section" data-rh-portfolio data-rh-portfolio-endpoint="{{ section.settings.data_endpoint | escape }}">
+<section id="{{ section_id }}" class="rh-portfolio section" data-rh-portfolio>
   <div class="page-width">
     <header class="rh-portfolio__header">
       <p class="eyebrow">{{ section.settings.eyebrow }}</p>
@@ -54,7 +54,7 @@
           <g class="rh-portfolio__y-axis"></g>
         </svg>
         <div class="rh-portfolio__x-axis" aria-hidden="true"></div>
-        <div class="rh-portfolio__chart-empty" data-rh-chart-empty hidden>Verified portfolio history will appear after the Robinhood CSV history export is connected.</div>
+        <div class="rh-portfolio__chart-empty" data-rh-chart-empty hidden>Portfolio history is unavailable.</div>
       </div>
       <div class="rh-portfolio__chart-note">{{ section.settings.chart_note }}</div>
       <div class="rh-portfolio__points" hidden>
@@ -151,29 +151,11 @@
   const pointsFromMarkup = (root) => Array.from(root.querySelectorAll('.rh-portfolio__points [data-value]')).map((point) => ({
     value: Number(point.dataset.value), label: point.dataset.label
   })).filter((point) => Number.isFinite(point.value));
-  const setChartStatus = (root, message) => {
-    const empty = root.querySelector('[data-rh-chart-empty]');
-    const svg = root.querySelector('.rh-portfolio__svg');
-    const xAxis = root.querySelector('.rh-portfolio__x-axis');
-    empty.textContent = message;
-    empty.hidden = false;
-    svg.hidden = true;
-    xAxis.innerHTML = '';
-  };
-  const clearHoldings = (root) => {
-    root.querySelectorAll('[data-rh-holding]').forEach((row) => {
-      row.querySelector('[data-rh-weight-label]').textContent = '—';
-      row.querySelector('[data-rh-weight-bar]').style.setProperty('--weight', '0%');
-      row.querySelector('[data-rh-return]').textContent = '—';
-      row.querySelector('[data-rh-return]').classList.remove('is-negative');
-    });
-  };
-  const renderPortfolio = (root, requestedRange, sourceValues) => {
-    const allValues = sourceValues || pointsFromMarkup(root);
+  const renderPortfolio = (root, requestedRange) => {
+    const allValues = pointsFromMarkup(root);
     const range = requestedRange || root.dataset.activeRange || '3m';
-    const values = range === '1m' ? allValues.slice(-4) : allValues;
+    const values = range === '1m' ? allValues.slice(-14) : allValues;
     if (values.length < 2) {
-      setChartStatus(root, 'Verified portfolio history will appear after the Robinhood CSV history export is connected.');
       return;
     }
     root.dataset.activeRange = range;
@@ -224,54 +206,11 @@
       button.setAttribute('aria-pressed', button.dataset.rhPortfolioRange === range ? 'true' : 'false');
     });
   };
-  const updateHoldings = (root, holdings) => {
-    holdings.forEach((holding) => {
-      const row = root.querySelector(`[data-rh-holding="${holding.symbol}"]`);
-      if (!row) return;
-      const weight = Number(holding.weight);
-      const returnValue = Number(holding.return);
-      if (Number.isFinite(weight)) {
-        row.querySelector('[data-rh-weight-label]').textContent = `${weight.toFixed(1)}%`;
-        row.querySelector('[data-rh-weight-bar]').style.setProperty('--weight', `${weight}%`);
-      }
-      if (Number.isFinite(returnValue)) {
-        const returnElement = row.querySelector('[data-rh-return]');
-        returnElement.textContent = asPercent(returnValue);
-        returnElement.classList.toggle('is-negative', returnValue < 0);
-      }
-    });
-  };
-  const loadPortfolio = async (root) => {
-    const endpoint = root.dataset.rhPortfolioEndpoint;
-    if (!endpoint) {
-      setChartStatus(root, 'Portfolio history source not configured.');
-      return;
-    }
-    try {
-      const response = await fetch(endpoint, { headers: { Accept: 'application/json' } });
-      if (!response.ok) throw new Error('Market data response unavailable');
-      const payload = await response.json();
-      if (!Array.isArray(payload.holdings)) throw new Error('Portfolio holdings unavailable');
-      updateHoldings(root, payload.holdings);
-      if (payload.as_of) root.querySelector('[data-rh-as-of]').textContent = String(payload.as_of).toUpperCase();
-      if (payload.source) root.querySelector('[data-rh-source-note]').textContent = String(payload.source).toUpperCase();
-      if (Number.isFinite(Number(payload.high_water_mark))) root.querySelector('[data-rh-high-water]').textContent = asPercent(Number(payload.high_water_mark));
-      if (Number.isFinite(Number(payload.maximum_drawdown))) root.querySelector('[data-rh-drawdown]').textContent = `${Number(payload.maximum_drawdown).toFixed(1)}pp`;
-      const history = Array.isArray(payload.history) ? payload.history.map((point) => ({ value: Number(point.return), label: point.label || point.date })).filter((point) => Number.isFinite(point.value)) : [];
-      root._rhPortfolioHistory = history;
-      if (history.length >= 2) renderPortfolio(root, undefined, history);
-      else setChartStatus(root, 'Live holdings are refreshed daily. Verified historical performance will appear once the Robinhood CSV history export is connected.');
-    } catch (error) {
-      setChartStatus(root, 'Live portfolio data is temporarily unavailable.');
-    }
-  };
   const initialize = () => document.querySelectorAll('[data-rh-portfolio]').forEach((root) => {
-    root._rhPortfolioHistory = [];
-    clearHoldings(root);
     root.querySelectorAll('[data-rh-portfolio-range]').forEach((button) => {
-      button.addEventListener('click', () => renderPortfolio(root, button.dataset.rhPortfolioRange, root._rhPortfolioHistory));
+      button.addEventListener('click', () => renderPortfolio(root, button.dataset.rhPortfolioRange));
     });
-    loadPortfolio(root);
+    renderPortfolio(root);
   });
   document.addEventListener('DOMContentLoaded', initialize);
   document.addEventListener('shopify:section:load', (event) => {
@@ -286,16 +225,15 @@
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "R&H CAPITAL / PORTFOLIO" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Long-term portfolio." },
-    { "type": "textarea", "id": "intro", "label": "Introduction", "default": "A percentage-only view of a long-term equity portfolio. It excludes macro positions and short-term trading activity." },
-    { "type": "text", "id": "period_return", "label": "Period return", "default": "+8.2%" },
-    { "type": "text", "id": "high_water_mark", "label": "High water mark", "default": "+13.0%" },
-    { "type": "text", "id": "maximum_drawdown", "label": "Maximum drawdown", "default": "−6.0pp" },
+    { "type": "textarea", "id": "intro", "label": "Introduction", "default": "A percentage-only view of a long-term equity portfolio, recorded from a Robinhood export." },
+    { "type": "text", "id": "period_return", "label": "Period return", "default": "+8.23%" },
+    { "type": "text", "id": "high_water_mark", "label": "High water mark", "default": "—" },
+    { "type": "text", "id": "maximum_drawdown", "label": "Maximum drawdown", "default": "—" },
     { "type": "text", "id": "as_of", "label": "As of", "default": "27 OCT 2026" },
     { "type": "text", "id": "chart_caption", "label": "Chart caption", "default": "Cumulative portfolio return, since inception" },
     { "type": "text", "id": "legend_label", "label": "Legend label", "default": "R&H CAPITAL" },
-    { "type": "text", "id": "source_note", "label": "Source note", "default": "SOURCE / ROBINHOOD DATA" },
-    { "type": "url", "id": "data_endpoint", "label": "Daily portfolio data endpoint" },
-    { "type": "text", "id": "chart_note", "label": "Chart note", "default": "Performance is shown as a percentage only. The curve is editable through Performance point blocks." },
+    { "type": "text", "id": "source_note", "label": "Source note", "default": "ROBINHOOD EXPORT PERFORMANCE RECORD" },
+    { "type": "text", "id": "chart_note", "label": "Chart note", "default": "Robinhood export performance record." },
     { "type": "text", "id": "holdings_heading", "label": "Holdings heading", "default": "Current allocation." },
     { "type": "textarea", "id": "holdings_intro", "label": "Holdings introduction", "default": "Allocation uses current market prices. Price return compares the current price with the recorded average cost and excludes cash, FX, fees and dividends." },
     { "type": "textarea", "id": "disclaimer", "label": "Disclosure", "default": "Personal portfolio for informational purposes only. It is not client money, a managed portfolio, investment advice or a recommendation. Past performance is not indicative of future results." }
