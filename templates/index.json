@@ -19,8 +19,11 @@
         "primary_link": "",
         "secondary_label": "Join R&H Intelligence",
         "secondary_link": "",
-        "card_title": "Process over prediction",
-        "disclaimer": "Illustrative internal framework. Not a performance record, forecast, or investment recommendation."
+        "card_title": "Long-term portfolio",
+        "portfolio_return": "+8.2%",
+        "portfolio_period": "3 MONTHS / NET CHANGE",
+        "portfolio_link": "/pages/portfolio",
+        "disclaimer": "Personal portfolio. Percentage return only. Excludes macro positions and short-term trading activity. Source: Robinhood account export."
       }
     },
     "ticker": {
