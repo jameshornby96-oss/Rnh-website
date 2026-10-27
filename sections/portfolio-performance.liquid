@@ -1,0 +1,219 @@
+{% liquid
+  assign section_id = 'PortfolioPerformance-' | append: section.id
+%}
+
+<section id="{{ section_id }}" class="rh-portfolio section" data-rh-portfolio>
+  <div class="page-width">
+    <header class="rh-portfolio__header">
+      <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+      <h1>{{ section.settings.heading }}</h1>
+      <p class="rh-portfolio__intro">{{ section.settings.intro }}</p>
+    </header>
+
+    <div class="rh-portfolio__summary" aria-label="Portfolio summary">
+      <div>
+        <span>PERIOD RETURN</span>
+        <strong>{{ section.settings.period_return }}</strong>
+      </div>
+      <div>
+        <span>HIGH WATER MARK</span>
+        <strong>{{ section.settings.high_water_mark }}</strong>
+      </div>
+      <div>
+        <span>MAXIMUM DRAWDOWN</span>
+        <strong>{{ section.settings.maximum_drawdown }}</strong>
+      </div>
+      <div>
+        <span>AS OF</span>
+        <strong>{{ section.settings.as_of }}</strong>
+      </div>
+    </div>
+
+    <div class="rh-portfolio__chart-panel">
+      <div class="rh-portfolio__chart-head">
+        <div>
+          <span class="eyebrow">PORTFOLIO RETURN</span>
+          <p>{{ section.settings.chart_caption }}</p>
+        </div>
+        <div class="rh-portfolio__legend" aria-label="Chart legend"><i></i>{{ section.settings.legend_label }}</div>
+      </div>
+      <div class="rh-portfolio__chart" aria-label="Portfolio performance chart" role="img">
+        <svg class="rh-portfolio__svg" viewBox="0 0 1000 360" preserveAspectRatio="none" aria-hidden="true">
+          <line class="rh-portfolio__zero" x1="64" x2="976" y1="0" y2="0"></line>
+          <path class="rh-portfolio__area"></path>
+          <path class="rh-portfolio__line"></path>
+          <circle class="rh-portfolio__last-point" r="5"></circle>
+          <g class="rh-portfolio__y-axis"></g>
+        </svg>
+        <div class="rh-portfolio__x-axis" aria-hidden="true"></div>
+      </div>
+      <div class="rh-portfolio__chart-note">{{ section.settings.chart_note }}</div>
+      <div class="rh-portfolio__points" hidden>
+        {% for block in section.blocks %}
+          {% if block.type == 'point' %}
+            <span data-value="{{ block.settings.return | escape }}" data-label="{{ block.settings.label | escape }}" {{ block.shopify_attributes }}></span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="rh-portfolio__holdings-heading">
+      <div>
+        <p class="eyebrow">CURRENT HOLDINGS</p>
+        <h2>{{ section.settings.holdings_heading }}</h2>
+      </div>
+      <p>{{ section.settings.holdings_intro }}</p>
+    </div>
+
+    <div class="rh-portfolio__holdings" role="table" aria-label="Current portfolio holdings">
+      <div class="rh-portfolio__holding rh-portfolio__holding--labels" role="row">
+        <span role="columnheader">SECURITY</span>
+        <span role="columnheader">ALLOCATION</span>
+        <span role="columnheader">PRICE RETURN</span>
+      </div>
+      {% for block in section.blocks %}
+        {% if block.type == 'holding' %}
+          <div class="rh-portfolio__holding" role="row" {{ block.shopify_attributes }}>
+            <div role="cell"><strong>{{ block.settings.ticker }}</strong><small>{{ block.settings.name }}</small></div>
+            <div role="cell"><b>{{ block.settings.weight }}</b><i><em style="--weight: {{ block.settings.weight_number }}%"></em></i></div>
+            <div role="cell" class="rh-portfolio__return {% if block.settings.return contains '−' %}is-negative{% endif %}">{{ block.settings.return }}</div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <p class="rh-portfolio__disclaimer">{{ section.settings.disclaimer }}</p>
+  </div>
+</section>
+
+{% stylesheet %}
+.rh-portfolio { background: var(--background); border-top: 1px solid var(--border); color: var(--foreground); padding-block: clamp(4rem, 9vw, 9rem); }
+.rh-portfolio__header { max-width: 60rem; margin-bottom: clamp(3rem, 6vw, 6rem); }
+.rh-portfolio .eyebrow { color: var(--gold); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; }
+.rh-portfolio h1, .rh-portfolio h2 { margin: .6rem 0 0; font-weight: 500; letter-spacing: -.065em; }
+.rh-portfolio h1 { font-size: clamp(3.4rem, 8vw, 8.5rem); line-height: .88; }
+.rh-portfolio h2 { font-size: clamp(2.1rem, 4.8vw, 4.8rem); line-height: .92; }
+.rh-portfolio__intro { max-width: 39rem; margin: 1.6rem 0 0; font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.45; }
+.rh-portfolio__summary { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--border); border-bottom: 0; }
+.rh-portfolio__summary > div { min-height: 9rem; padding: 1.25rem; border-right: 1px solid var(--border); display: flex; flex-direction: column; justify-content: space-between; gap: 1rem; }
+.rh-portfolio__summary > div:last-child { border-right: 0; }
+.rh-portfolio__summary span, .rh-portfolio__holding--labels { color: var(--muted); font-size: .63rem; letter-spacing: .12em; }
+.rh-portfolio__summary strong { font-size: clamp(1.25rem, 2.3vw, 2.15rem); font-weight: 500; letter-spacing: -.045em; }
+.rh-portfolio__chart-panel { border: 1px solid var(--border); }
+.rh-portfolio__chart-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; padding: 1.25rem; border-bottom: 1px solid var(--border); }
+.rh-portfolio__chart-head p { margin: .4rem 0 0; font-size: .85rem; color: var(--muted); }
+.rh-portfolio__legend { display: flex; align-items: center; gap: .5rem; font-size: .66rem; letter-spacing: .1em; white-space: nowrap; }
+.rh-portfolio__legend i { display: inline-block; width: 1.3rem; height: 1px; background: var(--gold); }
+.rh-portfolio__chart { height: clamp(19rem, 40vw, 34rem); position: relative; }
+.rh-portfolio__svg { position: absolute; inset: 1rem 1.2rem 2.6rem; width: calc(100% - 2.4rem); height: calc(100% - 3.6rem); overflow: visible; }
+.rh-portfolio__zero { stroke: var(--border); stroke-width: 1; stroke-dasharray: 3 5; }
+.rh-portfolio__area { fill: color-mix(in srgb, var(--gold) 8%, transparent); }
+.rh-portfolio__line { fill: none; stroke: var(--gold); stroke-width: 2.5; vector-effect: non-scaling-stroke; }
+.rh-portfolio__last-point { fill: var(--gold); stroke: var(--background); stroke-width: 3; vector-effect: non-scaling-stroke; }
+.rh-portfolio__y-axis text { fill: var(--muted); font-family: inherit; font-size: 22px; letter-spacing: 1px; }
+.rh-portfolio__y-axis line { stroke: color-mix(in srgb, var(--border) 80%, transparent); stroke-width: 1; }
+.rh-portfolio__x-axis { position: absolute; bottom: .85rem; left: 1.2rem; right: 1.2rem; display: flex; justify-content: space-between; color: var(--muted); font-size: .61rem; letter-spacing: .11em; text-transform: uppercase; }
+.rh-portfolio__chart-note { border-top: 1px solid var(--border); padding: .9rem 1.25rem; color: var(--muted); font-size: .66rem; letter-spacing: .08em; text-transform: uppercase; }
+.rh-portfolio__holdings-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-top: clamp(4.5rem, 10vw, 10rem); margin-bottom: 1.5rem; }
+.rh-portfolio__holdings-heading > p { max-width: 25rem; margin: 0; color: var(--muted); font-size: .84rem; line-height: 1.45; }
+.rh-portfolio__holdings { border-top: 1px solid var(--border); }
+.rh-portfolio__holding { display: grid; grid-template-columns: minmax(12rem, 1fr) minmax(12rem, .65fr) minmax(9rem, .35fr); align-items: center; gap: 2rem; padding: 1.1rem 1.25rem; border: 1px solid var(--border); border-top: 0; }
+.rh-portfolio__holding--labels { padding-block: .75rem; }
+.rh-portfolio__holding strong { display: block; font-size: 1.4rem; font-weight: 500; letter-spacing: -.03em; }
+.rh-portfolio__holding small { display: block; margin-top: .15rem; color: var(--muted); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+.rh-portfolio__holding b { display: inline-block; min-width: 4rem; font-weight: 500; }
+.rh-portfolio__holding i { display: inline-flex; vertical-align: middle; width: min(12vw, 7.5rem); height: 1px; background: var(--border); }
+.rh-portfolio__holding i em { width: var(--weight); background: var(--gold); }
+.rh-portfolio__return { font-size: 1.25rem; font-weight: 500; text-align: right; }
+.rh-portfolio__return.is-negative { color: var(--muted); }
+.rh-portfolio__disclaimer { max-width: 65rem; margin: 1.1rem 0 0; color: var(--muted); font-size: .65rem; letter-spacing: .075em; line-height: 1.5; text-transform: uppercase; }
+@media (max-width: 749px) { .rh-portfolio__summary { grid-template-columns: repeat(2, 1fr); } .rh-portfolio__summary > div:nth-child(2) { border-right: 0; } .rh-portfolio__summary > div { min-height: 7rem; border-bottom: 1px solid var(--border); } .rh-portfolio__summary > div:nth-last-child(-n+2) { border-bottom: 0; } .rh-portfolio__chart-head, .rh-portfolio__holdings-heading { display: block; } .rh-portfolio__legend, .rh-portfolio__holdings-heading > p { margin-top: 1rem; } .rh-portfolio__holding { grid-template-columns: 1.1fr 1fr; gap: 1rem; padding: 1rem; } .rh-portfolio__holding--labels { display: none; } .rh-portfolio__holding > :last-child { grid-column: 2; grid-row: 1; } .rh-portfolio__holding i { width: 4.5rem; } }
+{% endstylesheet %}
+
+{% javascript %}
+(() => {
+  const renderPortfolio = (root) => {
+    const values = Array.from(root.querySelectorAll('.rh-portfolio__points [data-value]')).map((point) => ({
+      value: Number(point.dataset.value),
+      label: point.dataset.label
+    })).filter((point) => Number.isFinite(point.value));
+    if (values.length < 2) return;
+
+    const zero = root.querySelector('.rh-portfolio__zero');
+    const line = root.querySelector('.rh-portfolio__line');
+    const area = root.querySelector('.rh-portfolio__area');
+    const last = root.querySelector('.rh-portfolio__last-point');
+    const axis = root.querySelector('.rh-portfolio__y-axis');
+    const xAxis = root.querySelector('.rh-portfolio__x-axis');
+    const left = 64;
+    const right = 976;
+    const top = 18;
+    const bottom = 324;
+    const rawMin = Math.min(0, ...values.map((point) => point.value));
+    const rawMax = Math.max(0, ...values.map((point) => point.value));
+    const padding = Math.max(1, (rawMax - rawMin) * 0.13);
+    const min = Math.floor(rawMin - padding);
+    const max = Math.ceil(rawMax + padding);
+    const scaleY = (value) => bottom - ((value - min) / (max - min)) * (bottom - top);
+    const scaleX = (index) => left + (index / (values.length - 1)) * (right - left);
+    const points = values.map((point, index) => [scaleX(index), scaleY(point.value)]);
+    const path = points.map((point, index) => `${index === 0 ? 'M' : 'L'} ${point[0].toFixed(2)} ${point[1].toFixed(2)}`).join(' ');
+    line.setAttribute('d', path);
+    zero.setAttribute('y1', scaleY(0));
+    zero.setAttribute('y2', scaleY(0));
+    area.setAttribute('d', `${path} L ${points[points.length - 1][0].toFixed(2)} ${bottom} L ${points[0][0].toFixed(2)} ${bottom} Z`);
+    last.setAttribute('cx', points[points.length - 1][0]);
+    last.setAttribute('cy', points[points.length - 1][1]);
+
+    const ticks = [min, Math.round((min + max) / 2), max];
+    axis.innerHTML = ticks.map((tick) => {
+      const y = scaleY(tick);
+      const prefix = tick > 0 ? '+' : '';
+      return `<line x1="${left}" x2="${right}" y1="${y}" y2="${y}"></line><text x="0" y="${y + 7}">${prefix}${tick.toFixed(0)}%</text>`;
+    }).join('');
+    const labelIndexes = [...new Set([0, Math.floor((values.length - 1) / 2), values.length - 1])];
+    xAxis.innerHTML = labelIndexes.map((index) => `<span>${values[index].label}</span>`).join('');
+  };
+  const initialize = () => document.querySelectorAll('[data-rh-portfolio]').forEach(renderPortfolio);
+  document.addEventListener('DOMContentLoaded', initialize);
+  document.addEventListener('shopify:section:load', (event) => {
+    if (event.target.matches('[data-rh-portfolio]')) renderPortfolio(event.target);
+  });
+})();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Portfolio performance",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "R&H CAPITAL / PORTFOLIO" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Portfolio." },
+    { "type": "textarea", "id": "intro", "label": "Introduction", "default": "A transparent, percentage-only view of a personal equity portfolio. Allocation and returns are shown for context, not as investment advice." },
+    { "type": "text", "id": "period_return", "label": "Period return", "default": "+8.2%" },
+    { "type": "text", "id": "high_water_mark", "label": "High water mark", "default": "+13.0%" },
+    { "type": "text", "id": "maximum_drawdown", "label": "Maximum drawdown", "default": "−6.0pp" },
+    { "type": "text", "id": "as_of", "label": "As of", "default": "27 OCT 2026" },
+    { "type": "text", "id": "chart_caption", "label": "Chart caption", "default": "Cumulative portfolio return, since inception" },
+    { "type": "text", "id": "legend_label", "label": "Legend label", "default": "R&H CAPITAL" },
+    { "type": "text", "id": "chart_note", "label": "Chart note", "default": "Performance is shown as a percentage only. The curve is editable through Performance point blocks." },
+    { "type": "text", "id": "holdings_heading", "label": "Holdings heading", "default": "Current allocation." },
+    { "type": "textarea", "id": "holdings_intro", "label": "Holdings introduction", "default": "Allocation uses current market prices. Price return compares the current price with the recorded average cost and excludes cash, FX, fees and dividends." },
+    { "type": "textarea", "id": "disclaimer", "label": "Disclosure", "default": "Personal portfolio for informational purposes only. It is not client money, a managed portfolio, investment advice or a recommendation. Past performance is not indicative of future results." }
+  ],
+  "blocks": [
+    { "type": "point", "name": "Performance point", "settings": [
+      { "type": "text", "id": "label", "label": "Date label", "default": "AUG 2026" },
+      { "type": "number", "id": "return", "label": "Cumulative return (%)", "default": 0 }
+    ]},
+    { "type": "holding", "name": "Holding", "settings": [
+      { "type": "text", "id": "ticker", "label": "Ticker", "default": "NVDA" },
+      { "type": "text", "id": "name", "label": "Company name", "default": "NVIDIA" },
+      { "type": "text", "id": "weight", "label": "Allocation label", "default": "23.3%" },
+      { "type": "number", "id": "weight_number", "label": "Allocation bar (%)", "default": 23.3 },
+      { "type": "text", "id": "return", "label": "Price return", "default": "+2.0%" }
+    ]}
+  ],
+  "max_blocks": 30,
+  "presets": [{ "name": "Portfolio performance" }]
+}
+{% endschema %}
