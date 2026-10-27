@@ -37,7 +37,7 @@
         </div>
         <div class="rh-portfolio__chart-meta">
           <div class="rh-portfolio__legend" aria-label="Chart legend"><i></i>{{ section.settings.legend_label }}</div>
-          <span data-rh-source-note>{{ section.settings.source_note }}</span>
+          {% if section.settings.source_note != blank %}<span data-rh-source-note>{{ section.settings.source_note }}</span>{% endif %}
         </div>
       </div>
       <div class="rh-portfolio__controls" role="group" aria-label="Select chart timeframe">
@@ -47,14 +47,13 @@
       </div>
       <div class="rh-portfolio__chart" aria-label="Portfolio performance chart" role="img">
         <svg class="rh-portfolio__svg" viewBox="0 0 1000 360" preserveAspectRatio="none" aria-hidden="true">
-          <line class="rh-portfolio__zero" x1="64" x2="976" y1="0" y2="0"></line>
+          <line class="rh-portfolio__zero" x1="64" x2="976" y1="268" y2="268"></line>
           <path class="rh-portfolio__area"></path>
-          <path class="rh-portfolio__line"></path>
-          <circle class="rh-portfolio__last-point" r="5"></circle>
+          <path class="rh-portfolio__line" d="M 64 268 L 194 268 L 324 169 L 454 100 L 584 130 L 714 74 L 844 208 L 976 122"></path>
+          <circle class="rh-portfolio__last-point" cx="976" cy="122" r="5"></circle>
           <g class="rh-portfolio__y-axis"></g>
         </svg>
-        <div class="rh-portfolio__x-axis" aria-hidden="true"></div>
-        <div class="rh-portfolio__chart-empty" data-rh-chart-empty hidden>Portfolio history is unavailable.</div>
+        <div class="rh-portfolio__x-axis" aria-hidden="true"><span>AUG 2026</span><span>MID SEP</span><span>27 OCT 2026</span></div>
       </div>
       <div class="rh-portfolio__chart-note">{{ section.settings.chart_note }}</div>
       <div class="rh-portfolio__points" hidden>
@@ -116,7 +115,6 @@
 .rh-portfolio__legend { display: flex; align-items: center; gap: .5rem; font-size: .66rem; letter-spacing: .1em; white-space: nowrap; }
 .rh-portfolio__legend i { display: inline-block; width: 1.3rem; height: 1px; background: var(--gold); }
 .rh-portfolio__chart { height: clamp(19rem, 40vw, 34rem); position: relative; }
-.rh-portfolio__chart-empty { position: absolute; inset: 0; display: grid; place-items: center; padding: 2rem; color: var(--muted); font-size: .7rem; letter-spacing: .1em; line-height: 1.5; text-align: center; text-transform: uppercase; }
 .rh-portfolio__svg { position: absolute; inset: 1rem 1.2rem 2.6rem; width: calc(100% - 2.4rem); height: calc(100% - 3.6rem); overflow: visible; }
 .rh-portfolio__zero { stroke: var(--border); stroke-width: 1; stroke-dasharray: 3 5; }
 .rh-portfolio__area { fill: transparent; }
@@ -147,7 +145,7 @@
 
 {% javascript %}
 (() => {
-  const asPercent = (value) => `${value >= 0 ? '+' : ''}${Number(value).toFixed(1)}%`;
+  const asPercent = (value) => `${value >= 0 ? '+' : ''}${Number(value).toFixed(2)}%`;
   const pointsFromMarkup = (root) => Array.from(root.querySelectorAll('.rh-portfolio__points [data-value]')).map((point) => ({
     value: Number(point.dataset.value), label: point.dataset.label
   })).filter((point) => Number.isFinite(point.value));
@@ -168,8 +166,6 @@
     const xAxis = root.querySelector('.rh-portfolio__x-axis');
     const periodMetric = root.querySelector('[data-rh-period-return]');
     const periodLabel = root.querySelector('[data-rh-period-label]');
-    root.querySelector('[data-rh-chart-empty]').hidden = true;
-    root.querySelector('.rh-portfolio__svg').hidden = false;
     const left = 64;
     const right = 976;
     const top = 18;
@@ -232,7 +228,7 @@
     { "type": "text", "id": "as_of", "label": "As of", "default": "27 OCT 2026" },
     { "type": "text", "id": "chart_caption", "label": "Chart caption", "default": "Cumulative portfolio return, since inception" },
     { "type": "text", "id": "legend_label", "label": "Legend label", "default": "R&H CAPITAL" },
-    { "type": "text", "id": "source_note", "label": "Source note", "default": "ROBINHOOD EXPORT PERFORMANCE RECORD" },
+    { "type": "text", "id": "source_note", "label": "Source note", "default": "" },
     { "type": "text", "id": "chart_note", "label": "Chart note", "default": "Robinhood export performance record." },
     { "type": "text", "id": "holdings_heading", "label": "Holdings heading", "default": "Current allocation." },
     { "type": "textarea", "id": "holdings_intro", "label": "Holdings introduction", "default": "Allocation uses current market prices. Price return compares the current price with the recorded average cost and excludes cash, FX, fees and dividends." },
@@ -251,7 +247,7 @@
       { "type": "text", "id": "return", "label": "Price return", "default": "+2.0%" }
     ]}
   ],
-  "max_blocks": 30,
+  "max_blocks": 50,
   "presets": [{ "name": "Portfolio performance" }]
 }
 {% endschema %}
