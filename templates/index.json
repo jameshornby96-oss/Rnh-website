@@ -20,10 +20,9 @@
         "secondary_label": "Join R&H Intelligence",
         "secondary_link": "",
         "card_title": "Long-term portfolio",
-        "portfolio_return": "+8.2%",
-        "portfolio_period": "3 MONTHS / NET CHANGE",
+        "portfolio_return": "+8.23%",
         "portfolio_link": "/pages/portfolio",
-        "disclaimer": "Personal portfolio. Percentage return only. Excludes macro positions and short-term trading activity. Source: Robinhood account export."
+        "disclaimer": "Robinhood export performance record."
       }
     },
     "ticker": {
