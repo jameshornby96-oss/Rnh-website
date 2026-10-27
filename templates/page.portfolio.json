@@ -1,0 +1,40 @@
+{
+  "sections": {
+    "main": {
+      "type": "portfolio-performance",
+      "blocks": {
+        "point_1": { "type": "point", "settings": { "label": "AUG 2026", "return": 0 } },
+        "point_2": { "type": "point", "settings": { "label": "LATE AUG", "return": 1.4 } },
+        "point_3": { "type": "point", "settings": { "label": "EARLY SEP", "return": 4.6 } },
+        "point_4": { "type": "point", "settings": { "label": "MID SEP", "return": 8.9 } },
+        "point_5": { "type": "point", "settings": { "label": "LATE SEP", "return": 10.8 } },
+        "point_6": { "type": "point", "settings": { "label": "EARLY OCT", "return": 9.2 } },
+        "point_7": { "type": "point", "settings": { "label": "MID OCT", "return": 13.0 } },
+        "point_8": { "type": "point", "settings": { "label": "LATE OCT", "return": 8.2 } },
+        "nvda": { "type": "holding", "settings": { "ticker": "NVDA", "name": "NVIDIA", "weight": "23.3%", "weight_number": 23.3, "return": "+2.0%" } },
+        "mu": { "type": "holding", "settings": { "ticker": "MU", "name": "MICRON TECHNOLOGY", "weight": "22.7%", "weight_number": 22.7, "return": "+3.0%" } },
+        "vst": { "type": "holding", "settings": { "ticker": "VST", "name": "VISTRA", "weight": "18.4%", "weight_number": 18.4, "return": "+0.2%" } },
+        "meta": { "type": "holding", "settings": { "ticker": "META", "name": "META PLATFORMS", "weight": "13.6%", "weight_number": 13.6, "return": "+11.9%" } },
+        "grab": { "type": "holding", "settings": { "ticker": "GRAB", "name": "GRAB HOLDINGS", "weight": "11.7%", "weight_number": 11.7, "return": "−8.6%" } },
+        "t": { "type": "holding", "settings": { "ticker": "T", "name": "AT&T", "weight": "10.3%", "weight_number": 10.3, "return": "−0.7%" } }
+      },
+      "block_order": ["point_1", "point_2", "point_3", "point_4", "point_5", "point_6", "point_7", "point_8", "nvda", "mu", "vst", "meta", "grab", "t"],
+      "settings": {
+        "eyebrow": "R&H CAPITAL / PORTFOLIO",
+        "heading": "Portfolio.",
+        "intro": "A transparent, percentage-only view of a personal equity portfolio. Allocation and returns are shown for context, not as investment advice.",
+        "period_return": "+8.2%",
+        "high_water_mark": "+13.0%",
+        "maximum_drawdown": "−6.0pp",
+        "as_of": "27 OCT 2026",
+        "chart_caption": "Cumulative portfolio return, since inception",
+        "legend_label": "R&H CAPITAL",
+        "chart_note": "Performance is shown as a percentage only. The curve is editable through Performance point blocks.",
+        "holdings_heading": "Current allocation.",
+        "holdings_intro": "Allocation uses current market prices. Price return compares the current price with the recorded average cost and excludes cash, FX, fees and dividends.",
+        "disclaimer": "Personal portfolio for informational purposes only. It is not client money, a managed portfolio, investment advice or a recommendation. Past performance is not indicative of future results."
+      }
+    }
+  },
+  "order": ["main"]
+}
