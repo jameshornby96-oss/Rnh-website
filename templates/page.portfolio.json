@@ -3,48 +3,339 @@
     "main": {
       "type": "portfolio-performance",
       "blocks": {
-        "point_1": { "type": "point", "settings": { "label": "AUG 2026", "return": 0 } },
-        "point_2": { "type": "point", "settings": { "label": "LATE AUG", "return": 0 } },
-        "point_3": { "type": "point", "settings": { "label": "EARLY SEP", "return": 4.4 } },
-        "point_4": { "type": "point", "settings": { "label": "MID SEP", "return": 9.5 } },
-        "point_5": { "type": "point", "settings": { "label": "LATE SEP", "return": 8.0 } },
-        "point_6": { "type": "point", "settings": { "label": "EARLY OCT", "return": 12.1 } },
-        "point_7": { "type": "point", "settings": { "label": "MID OCT", "return": 4.2 } },
-        "point_8": { "type": "point", "settings": { "label": "27 OCT 2026", "return": 8.23 } },
-        "point_09": { "type": "point", "settings": { "label": "AUG 2026", "return": 0 } },
-        "point_10": { "type": "point", "settings": { "label": "AUG 2026", "return": 0 } },
-        "point_11": { "type": "point", "settings": { "label": "LATE AUG", "return": 0.2 } },
-        "point_12": { "type": "point", "settings": { "label": "LATE AUG", "return": 0.7 } },
-        "point_13": { "type": "point", "settings": { "label": "EARLY SEP", "return": 1.1 } },
-        "point_14": { "type": "point", "settings": { "label": "EARLY SEP", "return": 2.7 } },
-        "point_15": { "type": "point", "settings": { "label": "EARLY SEP", "return": 4.4 } },
-        "point_16": { "type": "point", "settings": { "label": "MID SEP", "return": 3.8 } },
-        "point_17": { "type": "point", "settings": { "label": "MID SEP", "return": 5.0 } },
-        "point_18": { "type": "point", "settings": { "label": "MID SEP", "return": 5.8 } },
-        "point_19": { "type": "point", "settings": { "label": "MID SEP", "return": 9.5 } },
-        "point_20": { "type": "point", "settings": { "label": "LATE SEP", "return": 10.4 } },
-        "point_21": { "type": "point", "settings": { "label": "LATE SEP", "return": 9.2 } },
-        "point_22": { "type": "point", "settings": { "label": "LATE SEP", "return": 8.0 } },
-        "point_23": { "type": "point", "settings": { "label": "EARLY OCT", "return": 9.5 } },
-        "point_24": { "type": "point", "settings": { "label": "EARLY OCT", "return": 8.6 } },
-        "point_25": { "type": "point", "settings": { "label": "EARLY OCT", "return": 9.4 } },
-        "point_26": { "type": "point", "settings": { "label": "EARLY OCT", "return": 12.1 } },
-        "point_27": { "type": "point", "settings": { "label": "MID OCT", "return": 13.2 } },
-        "point_28": { "type": "point", "settings": { "label": "MID OCT", "return": 11.2 } },
-        "point_29": { "type": "point", "settings": { "label": "MID OCT", "return": 12.2 } },
-        "point_30": { "type": "point", "settings": { "label": "LATE OCT", "return": 9.5 } },
-        "point_31": { "type": "point", "settings": { "label": "LATE OCT", "return": 7.2 } },
-        "point_32": { "type": "point", "settings": { "label": "LATE OCT", "return": 5.3 } },
-        "point_33": { "type": "point", "settings": { "label": "LATE OCT", "return": 4.2 } },
-        "point_34": { "type": "point", "settings": { "label": "27 OCT 2026", "return": 8.23 } },
-        "nvda": { "type": "holding", "settings": { "ticker": "NVDA", "name": "NVIDIA", "weight": "23.29%", "weight_number": 23.29, "return": "+2.92%" } },
-        "mu": { "type": "holding", "settings": { "ticker": "MU", "name": "MICRON TECHNOLOGY", "weight": "22.81%", "weight_number": 22.81, "return": "+4.51%" } },
-        "vst": { "type": "holding", "settings": { "ticker": "VST", "name": "VISTRA", "weight": "18.62%", "weight_number": 18.62, "return": "+2.76%" } },
-        "meta": { "type": "holding", "settings": { "ticker": "META", "name": "META PLATFORMS", "weight": "13.32%", "weight_number": 13.32, "return": "+10.74%" } },
-        "grab": { "type": "holding", "settings": { "ticker": "GRAB", "name": "GRAB HOLDINGS", "weight": "11.66%", "weight_number": 11.66, "return": "−8.31%" } },
-        "t": { "type": "holding", "settings": { "ticker": "T", "name": "AT&T", "weight": "10.31%", "weight_number": 10.31, "return": "+0.24%" } }
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "label": "AUG 2026",
+            "return": 0
+          }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "label": "LATE AUG",
+            "return": 0
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "label": "EARLY SEP",
+            "return": 4.4
+          }
+        },
+        "point_4": {
+          "type": "point",
+          "settings": {
+            "label": "MID SEP",
+            "return": 9.5
+          }
+        },
+        "point_5": {
+          "type": "point",
+          "settings": {
+            "label": "LATE SEP",
+            "return": 8
+          }
+        },
+        "point_6": {
+          "type": "point",
+          "settings": {
+            "label": "EARLY OCT",
+            "return": 12.1
+          }
+        },
+        "point_7": {
+          "type": "point",
+          "settings": {
+            "label": "MID OCT",
+            "return": 4.2
+          }
+        },
+        "point_8": {
+          "type": "point",
+          "settings": {
+            "label": "27 OCT 2026",
+            "return": 8.23
+          }
+        },
+        "point_09": {
+          "type": "point",
+          "settings": {
+            "label": "AUG 2026",
+            "return": 0
+          }
+        },
+        "point_10": {
+          "type": "point",
+          "settings": {
+            "label": "AUG 2026",
+            "return": 0
+          }
+        },
+        "point_11": {
+          "type": "point",
+          "settings": {
+            "label": "LATE AUG",
+            "return": 0.2
+          }
+        },
+        "point_12": {
+          "type": "point",
+          "settings": {
+            "label": "LATE AUG",
+            "return": 0.7
+          }
+        },
+        "point_13": {
+          "type": "point",
+          "settings": {
+            "label": "EARLY SEP",
+            "return": 1.1
+          }
+        },
+        "point_14": {
+          "type": "point",
+          "settings": {
+            "label": "EARLY SEP",
+            "return": 2.7
+          }
+        },
+        "point_15": {
+          "type": "point",
+          "settings": {
+            "label": "EARLY SEP",
+            "return": 4.4
+          }
+        },
+        "point_16": {
+          "type": "point",
+          "settings": {
+            "label": "MID SEP",
+            "return": 3.8
+          }
+        },
+        "point_17": {
+          "type": "point",
+          "settings": {
+            "label": "MID SEP",
+            "return": 5
+          }
+        },
+        "point_18": {
+          "type": "point",
+          "settings": {
+            "label": "MID SEP",
+            "return": 5.8
+          }
+        },
+        "point_19": {
+          "type": "point",
+          "settings": {
+            "label": "MID SEP",
+            "return": 9.5
+          }
+        },
+        "point_20": {
+          "type": "point",
+          "settings": {
+            "label": "LATE SEP",
+            "return": 10.4
+          }
+        },
+        "point_21": {
+          "type": "point",
+          "settings": {
+            "label": "LATE SEP",
+            "return": 9.2
+          }
+        },
+        "point_22": {
+          "type": "point",
+          "settings": {
+            "label": "LATE SEP",
+            "return": 8
+          }
+        },
+        "point_23": {
+          "type": "point",
+          "settings": {
+            "label": "EARLY OCT",
+            "return": 9.5
+          }
+        },
+        "point_24": {
+          "type": "point",
+          "settings": {
+            "label": "EARLY OCT",
+            "return": 8.6
+          }
+        },
+        "point_25": {
+          "type": "point",
+          "settings": {
+            "label": "EARLY OCT",
+            "return": 9.4
+          }
+        },
+        "point_26": {
+          "type": "point",
+          "settings": {
+            "label": "EARLY OCT",
+            "return": 12.1
+          }
+        },
+        "point_27": {
+          "type": "point",
+          "settings": {
+            "label": "MID OCT",
+            "return": 13.2
+          }
+        },
+        "point_28": {
+          "type": "point",
+          "settings": {
+            "label": "MID OCT",
+            "return": 11.2
+          }
+        },
+        "point_29": {
+          "type": "point",
+          "settings": {
+            "label": "MID OCT",
+            "return": 12.2
+          }
+        },
+        "point_30": {
+          "type": "point",
+          "settings": {
+            "label": "LATE OCT",
+            "return": 9.5
+          }
+        },
+        "point_31": {
+          "type": "point",
+          "settings": {
+            "label": "LATE OCT",
+            "return": 7.2
+          }
+        },
+        "point_32": {
+          "type": "point",
+          "settings": {
+            "label": "LATE OCT",
+            "return": 5.3
+          }
+        },
+        "point_33": {
+          "type": "point",
+          "settings": {
+            "label": "LATE OCT",
+            "return": 4.2
+          }
+        },
+        "point_34": {
+          "type": "point",
+          "settings": {
+            "label": "27 OCT 2026",
+            "return": 8.23
+          }
+        },
+        "nvda": {
+          "type": "holding",
+          "settings": {
+            "ticker": "NVDA",
+            "name": "NVIDIA",
+            "weight": "23.14%",
+            "weight_number": 23.14,
+            "return": "+3.33%"
+          }
+        },
+        "mu": {
+          "type": "holding",
+          "settings": {
+            "ticker": "MU",
+            "name": "MICRON TECHNOLOGY",
+            "weight": "23.29%",
+            "weight_number": 23.29,
+            "return": "+7.83%"
+          }
+        },
+        "vst": {
+          "type": "holding",
+          "settings": {
+            "ticker": "VST",
+            "name": "VISTRA",
+            "weight": "18.83%",
+            "weight_number": 18.83,
+            "return": "+4.94%"
+          }
+        },
+        "meta": {
+          "type": "holding",
+          "settings": {
+            "ticker": "META",
+            "name": "META PLATFORMS",
+            "weight": "13.09%",
+            "weight_number": 13.09,
+            "return": "+9.91%"
+          }
+        },
+        "grab": {
+          "type": "holding",
+          "settings": {
+            "ticker": "GRAB",
+            "name": "GRAB HOLDINGS",
+            "weight": "11.54%",
+            "weight_number": 11.54,
+            "return": "−8.05%"
+          }
+        },
+        "t": {
+          "type": "holding",
+          "settings": {
+            "ticker": "T",
+            "name": "AT&T",
+            "weight": "10.11%",
+            "weight_number": 10.11,
+            "return": "−0.71%"
+          }
+        }
       },
-      "block_order": ["point_09", "point_10", "point_11", "point_12", "point_13", "point_14", "point_15", "point_16", "point_17", "point_18", "point_19", "point_20", "point_21", "point_22", "point_23", "point_24", "point_25", "point_26", "point_27", "point_28", "point_29", "point_30", "point_31", "point_32", "point_33", "point_34", "nvda", "mu", "vst", "meta", "grab", "t"],
+      "block_order": [
+        "point_09",
+        "point_10",
+        "point_11",
+        "point_12",
+        "point_13",
+        "point_14",
+        "point_15",
+        "point_16",
+        "point_17",
+        "point_18",
+        "point_19",
+        "point_20",
+        "point_21",
+        "point_22",
+        "point_23",
+        "point_24",
+        "point_25",
+        "point_26",
+        "point_27",
+        "point_28",
+        "point_29",
+        "point_30",
+        "point_31",
+        "point_32",
+        "point_33",
+        "point_34",
+        "nvda",
+        "mu",
+        "vst",
+        "meta",
+        "grab",
+        "t"
+      ],
       "settings": {
         "eyebrow": "R&H CAPITAL / PORTFOLIO",
         "heading": "Long-term portfolio.",
@@ -58,10 +349,12 @@
         "source_note": "",
         "chart_note": "Robinhood export performance record.",
         "holdings_heading": "Current allocation.",
-        "holdings_intro": "Recorded portfolio allocation and price return snapshot, shown as percentages only.",
+        "holdings_intro": "Allocation and price return are shown as percentages only, using Nasdaq pre-market quotes from 28 Oct 2026 at 08:24 ET.",
         "disclaimer": "Personal portfolio for informational purposes only. It is not client money, a managed portfolio, investment advice or a recommendation. Past performance is not indicative of future results."
       }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
