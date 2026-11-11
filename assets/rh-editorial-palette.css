@@ -1,6 +1,10 @@
 .button--gold{color:#fff}
 .button--gold:hover{color:#fff}
 .ticker{background:var(--gold);color:#fff}
+body:before{background:color-mix(in srgb,var(--background) 84%,transparent)}
+.site-header{background:color-mix(in srgb,var(--background) 93%,transparent)}
+.index-card{background:color-mix(in srgb,var(--background) 68%,transparent)}
+.index-card--portfolio:hover{background:color-mix(in srgb,var(--background) 92%,transparent)}
 .newsletter-signup{color:var(--foreground)}
 .newsletter-signup .eyebrow,.newsletter-signup__message{color:var(--gold)}
 .newsletter-signup__form button{background:var(--foreground);color:var(--background)}
