@@ -1,27 +1,35 @@
 {% liquid
-  assign hero_heading = section.settings.heading | newline_to_br | replace: 'Building', '<em>Building</em>' | replace: 'generation', '<em>generation</em>' | replace: 'macro', '<em>macro</em>'
   assign portfolio_link = section.settings.portfolio_link | default: '/pages/portfolio'
+  assign first_link = section.settings.primary_link | default: '/pages/research?view=research'
+  assign newsletter_link = section.settings.secondary_link | default: '/pages/r-h-intelligence?view=rh-intelligence'
+  assign research_link = section.settings.research_link | default: '/pages/ai-analysis'
 %}
-<section class="hero">
-  <div class="hero-copy reveal">
-    <div>
-      <div class="eyebrow">{{ section.settings.eyebrow }}</div>
-      <h1>{{ hero_heading }}</h1>
+<section class="rh-home-hero" aria-labelledby="HomeHero-{{ section.id }}">
+  <div class="rh-home-hero__inner page-width">
+    <div class="rh-home-hero__copy">
+      <p class="rh-home-hero__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      <h1 id="HomeHero-{{ section.id }}">{{ section.settings.heading | escape | newline_to_br }}</h1>
+      <p class="rh-home-hero__description">{{ section.settings.description | escape | newline_to_br }}</p>
+      <div class="rh-home-hero__actions">
+        {% if section.settings.primary_label != blank %}<a href="{{ first_link }}">{{ section.settings.primary_label | escape }} <span aria-hidden="true">↗</span></a>{% endif %}
+        {% if section.settings.secondary_label != blank %}<a href="{{ newsletter_link }}">{{ section.settings.secondary_label | escape }} <span aria-hidden="true">↗</span></a>{% endif %}
+      </div>
     </div>
-    <div class="hero-bottom">
-      <p class="hero-description">{{ section.settings.description }}</p>
-      <div class="hero-actions"><a class="button" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label }} ↗</a><a class="button button--gold" href="{{ section.settings.secondary_link }}">{{ section.settings.secondary_label }} ↗</a></div>
+    <div class="rh-home-hero__features">
+      <a class="rh-home-feature rh-home-feature--portfolio" href="{{ portfolio_link }}">
+        <span class="rh-home-feature__label">R&amp;H / LONG-TERM PORTFOLIO</span>
+        <span class="rh-home-feature__title">{{ section.settings.card_title | escape }}</span>
+        {% if section.settings.disclaimer != blank %}<span class="rh-home-feature__note">{{ section.settings.disclaimer | escape }}</span>{% endif %}
+        <span class="rh-home-feature__link">VIEW PORTFOLIO <span aria-hidden="true">↗</span></span>
+      </a>
+      <a class="rh-home-feature rh-home-feature--research" href="{{ research_link }}">
+        <span class="rh-home-feature__label">R&amp;H / SELECTED PAPERS</span>
+        <span class="rh-home-feature__title">{{ section.settings.research_title | default: 'AI: Investment Return, Hyperscalers & Positioning' | escape }}</span>
+        <span class="rh-home-feature__link">READ PAPER <span aria-hidden="true">↗</span></span>
+      </a>
     </div>
-  </div>
-  <div class="hero-visual">
-    <a class="index-card index-card--portfolio reveal" href="{{ portfolio_link }}" aria-label="View the long-term portfolio">
-      <div class="index-card-top"><span class="eyebrow">R&H / LONG-TERM PORTFOLIO</span><span class="live eyebrow">VIEW PORTFOLIO ↗</span></div>
-      <div class="portfolio-card-return"><span>{{ section.settings.card_title }}</span><strong>{{ section.settings.portfolio_return }}</strong></div>
-      <div class="chart"><svg viewBox="0 0 600 250" preserveAspectRatio="none" aria-hidden="true"><path class="line" d="M0 214 L32 214 L64 214 L96 214 L128 214 L160 211 L188 202 L216 179 L244 151 L272 161 L300 139 L328 124 L356 91 L384 74 L412 87 L440 99 L468 84 L496 60 L524 44 L544 65 L564 53 L580 108 L592 133 L600 94"/><circle class="endpoint" cx="600" cy="94" r="5"/></svg></div>
-      <p class="disclaimer">{{ section.settings.disclaimer }}</p>
-    </a>
   </div>
 </section>
 {% schema %}
-{"name":"RH hero","settings":[{"type":"text","id":"eyebrow","label":"Eyebrow","default":"Independent finance company / UK"},{"type":"textarea","id":"heading","label":"Heading","default":"Building a\nnew\ngeneration\nof macro\nresearch."},{"type":"textarea","id":"description","label":"Description","default":"Independent market research, macroeconomic insight, and active trading experience."},{"type":"text","id":"primary_label","label":"First CTA","default":"Explore R&H"},{"type":"url","id":"primary_link","label":"First CTA link"},{"type":"text","id":"secondary_label","label":"Second CTA","default":"Join R&H Intelligence"},{"type":"url","id":"secondary_link","label":"Second CTA link"},{"type":"text","id":"card_title","label":"Portfolio label","default":"Long-term portfolio"},{"type":"text","id":"portfolio_return","label":"Portfolio return","default":"+8.2%"},{"type":"text","id":"portfolio_period","label":"Return period","default":"3 MONTHS / NET CHANGE"},{"type":"url","id":"portfolio_link","label":"Portfolio page link"},{"type":"textarea","id":"disclaimer","label":"Portfolio note","default":"Personal portfolio. Percentage return only. Excludes macro positions and short-term trading activity. Source: Robinhood account export."}],"presets":[{"name":"RH hero"}]}
+{"name":"RH hero","settings":[{"type":"text","id":"eyebrow","label":"Eyebrow","default":"Independent finance company / UK"},{"type":"textarea","id":"heading","label":"Heading","default":"Building a\nnew\ngeneration\nof macro\nresearch."},{"type":"textarea","id":"description","label":"Description","default":"Independent market research, macroeconomic insight, and active trading experience."},{"type":"text","id":"primary_label","label":"First CTA","default":"Explore R&H"},{"type":"url","id":"primary_link","label":"First CTA link"},{"type":"text","id":"secondary_label","label":"Second CTA","default":"Join R&H Intelligence"},{"type":"url","id":"secondary_link","label":"Second CTA link"},{"type":"text","id":"card_title","label":"Portfolio label","default":"Long-term portfolio"},{"type":"text","id":"portfolio_return","label":"Portfolio return","default":"+8.2%"},{"type":"text","id":"portfolio_period","label":"Return period","default":"3 MONTHS / NET CHANGE"},{"type":"url","id":"portfolio_link","label":"Portfolio page link"},{"type":"textarea","id":"disclaimer","label":"Portfolio note","default":"Personal portfolio. Percentage return only. Excludes macro positions and short-term trading activity. Source: Robinhood account export."},{"type":"text","id":"research_title","label":"Selected paper title","default":"AI: Investment Return, Hyperscalers & Positioning"},{"type":"url","id":"research_link","label":"Selected paper link"}],"presets":[{"name":"RH hero"}]}
 {% endschema %}
