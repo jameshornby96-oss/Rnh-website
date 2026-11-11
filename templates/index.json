@@ -27,6 +27,7 @@
     },
     "ticker": {
       "type": "ticker",
+      "disabled": true,
       "blocks": {
         "a": {
           "type": "item",
