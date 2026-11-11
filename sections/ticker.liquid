@@ -1,13 +1,11 @@
-<div class="ticker" data-market-ticker data-market-url="https://rh-market-ticker.james-hornby96.workers.dev" aria-label="Live market data ticker">
+<div class="ticker" data-market-ticker data-market-url="https://rh-market-ticker.james-hornby96.workers.dev" aria-label="Market data ticker">
   <div class="ticker-track" data-market-ticker-track>
-    {% for i in (1..2) %}
-      {% for block in section.blocks %}
-        <span {{ block.shopify_attributes }}>{{ block.settings.text }}</span>
-      {% endfor %}
-    {% endfor %}
+    <span class="ticker-market"><b>SPY</b> <i>—</i></span>
+    <span class="ticker-market"><b>QQQ</b> <i>—</i></span>
+    <span class="ticker-market"><b>EUR/USD</b> <i>—</i></span>
+    <span class="ticker-status" data-market-status role="status">Market data loading</span>
   </div>
 </div>
-
 
 <style>
   .ticker--live { overflow:hidden; }
@@ -15,14 +13,14 @@
   .ticker--live:hover .ticker-track { animation-play-state:paused; }
   @keyframes rh-live-ticker { from { transform:translateX(0); } to { transform:translateX(-50%); } }
   @media (prefers-reduced-motion:reduce) { .ticker--live .ticker-track { animation:none; transform:none; } }
-  .ticker--live .ticker-market { display:inline-flex; align-items:baseline; gap:.55rem; margin:0; }
-  .ticker--live .ticker-market b { font-size:10px; letter-spacing:.14em; }
-  .ticker--live .ticker-market i, .ticker--live .ticker-market em { font-style:normal; }
+  .ticker-market { display:inline-flex; align-items:baseline; gap:.55rem; }
+  .ticker--live .ticker-market { margin:0; }
+  .ticker-market b { font-size:10px; letter-spacing:.14em; }
+  .ticker-market i, .ticker-market em { font-style:normal; }
   .ticker--live .ticker-market em.is-positive { color:#fff; }
   .ticker--live .ticker-market em.is-negative { color:#fff; opacity:.78; }
-  @media (max-width:700px) { .ticker--live .ticker-track { gap:1.25rem; justify-content:flex-start; min-width:240%; animation-duration:22s; } .ticker--live .ticker-market { gap:.3rem; font-size:8px; } .ticker--live .ticker-market b { font-size:8px; } }
+  @media (max-width:700px) { .ticker--live .ticker-track { gap:1.25rem; justify-content:flex-start; min-width:240%; animation-duration:22s; } .ticker-market { gap:.3rem; font-size:8px; } .ticker-market b { font-size:8px; } }
 </style>
-
 
 <script>
 (() => {
@@ -30,38 +28,33 @@
   if (!ticker || ticker.dataset.marketTickerReady) return;
   ticker.dataset.marketTickerReady = 'true';
   const track = ticker.querySelector('[data-market-ticker-track]');
+  const status = ticker.querySelector('[data-market-status]');
   const formatPrice = (value) => { const number = Number(value); if (!Number.isFinite(number)) return '—'; return number >= 100 ? number.toFixed(2) : number.toFixed(4); };
-  const formatChange = (value) => { const number = Number(value); if (!Number.isFinite(number)) return ''; return (number >= 0 ? '+' : '') + number.toFixed(2) + '%'; };
+  const formatChange = (value) => { if (value === undefined || value === null || value === '') return ''; const number = Number(value); if (!Number.isFinite(number)) return ''; return (number >= 0 ? '+' : '') + number.toFixed(2) + '%'; };
   const pickQuote = (data, key) => data[key] || data[key.replace('/', '')] || {};
   fetch(ticker.dataset.marketUrl, { headers: { Accept: 'application/json' } })
     .then((response) => { if (!response.ok) throw new Error('Market feed unavailable'); return response.json(); })
     .then((data) => {
-      const instruments = [['SPY', pickQuote(data, 'SPY')], ['QQQ', pickQuote(data, 'QQQ')], ['DOLLAR', pickQuote(data, 'EUR/USD')]]
+      const instruments = [['SPY', pickQuote(data, 'SPY')], ['QQQ', pickQuote(data, 'QQQ')], ['EUR/USD', pickQuote(data, 'EUR/USD')]]
         .filter((item) => item[1] && (item[1].close || item[1].price || item[1].last));
       if (!instruments.length) throw new Error('No usable market quotes');
       const items = instruments.map((item) => {
         const label = item[0], quote = item[1], price = quote.close || quote.price || quote.last;
-        const change = quote.percent_change || quote.change_percent || quote.change_pct;
+        const change = quote.percent_change ?? quote.change_percent ?? quote.change_pct;
         const direction = Number(change) >= 0 ? 'is-positive' : 'is-negative';
         return '<span class="ticker-market"><b>' + label + '</b><i>' + formatPrice(price) + '</i><em class="' + direction + '">' + formatChange(change) + '</em></span>';
       }).join('');
       track.innerHTML = items + items;
       ticker.classList.add('ticker--live');
     })
-    .catch(() => ticker.classList.add('ticker--fallback'));
+    .catch(() => { status.textContent = 'Market data unavailable'; ticker.classList.add('ticker--fallback'); });
 })();
 </script>
-
 
 {% schema %}
 {
   "name": "Ticker",
-  "blocks": [{ "type": "item", "name": "Ticker item", "settings": [{ "type": "text", "id": "text", "label": "Text", "default": "Research before risk" }] }],
-  "presets": [{ "name": "Ticker", "blocks": [
-    { "type": "item", "settings": { "text": "Before risk / London / UK" } },
-    { "type": "item", "settings": { "text": "Discipline > drama / R&H / 01" } },
-    { "type": "item", "settings": { "text": "Five-figure ambition / long view, short feedback loop" } },
-    { "type": "item", "settings": { "text": "Research before risk" } }
-  ] }]
+  "blocks": [{ "type": "item", "name": "Ticker item", "settings": [{ "type": "text", "id": "text", "label": "Text", "default": "Market" }] }],
+  "presets": [{ "name": "Ticker" }]
 }
 {% endschema %}
