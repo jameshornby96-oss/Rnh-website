@@ -1,0 +1,8 @@
+.button--gold{color:#fff}
+.button--gold:hover{color:#fff}
+.ticker{background:var(--gold);color:#fff}
+.newsletter-signup{color:var(--foreground)}
+.newsletter-signup .eyebrow,.newsletter-signup__message{color:var(--gold)}
+.newsletter-signup__form button{background:var(--foreground);color:var(--background)}
+:focus-visible{outline-color:var(--gold)}
+@media (prefers-reduced-motion:reduce){.reveal{animation:none}}

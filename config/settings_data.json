@@ -13,9 +13,9 @@
     "wordmark": "R&H Capital",
     "background": "#F5F2E9",
     "foreground": "#171717",
-    "gold": "#C59423",
-    "border": "#c9c4b8",
-    "muted": "#68655d",
+    "gold": "#4D585C",
+    "border": "#C4C4BF",
+    "muted": "#5D6261",
     "type_scale": "compact",
     "footer_copy": "Independent market research, macroeconomic insight, and active trading experience.",
     "sections": {
