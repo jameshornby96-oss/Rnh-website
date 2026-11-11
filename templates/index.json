@@ -104,8 +104,8 @@
     }
   },
   "order": [
-    "ticker",
     "hero",
+    "ticker",
     "intro",
     "research",
     "products",

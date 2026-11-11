@@ -15,7 +15,7 @@ body .ticker--live .ticker-market em.is-negative { color: #ffd3ca; }
 .button--gold { background: #253c4d; border-color: #253c4d; color: #fff; }
 .button--gold:hover { background: #111c25; border-color: #111c25; color: #fff; }
 
-.rh-home-hero { border-bottom: 1px solid var(--border); background: #f7f7f5; }
+.rh-home-hero { border-top: 6px solid #344b5a; border-bottom: 1px solid var(--border); background: #e8edef; }
 .rh-home-hero__inner { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr); gap: clamp(3rem, 7vw, 8rem); align-items: center; padding-top: clamp(4rem, 8vw, 8rem); padding-bottom: clamp(4rem, 8vw, 8rem); }
 .rh-home-hero__copy { max-width: 760px; }
 .rh-home-hero__eyebrow, .rh-home-feature__label { margin: 0; font-size: .67rem; font-weight: 700; line-height: 1.4; letter-spacing: .13em; text-transform: uppercase; }
