@@ -10,8 +10,8 @@ body {
 body:before { content: none; }
 .site-header { background: var(--background); }
 .ticker { background: #253c4d; color: #fff; }
-.ticker--live .ticker-market em.is-positive { color: #e3f1ec; }
-.ticker--live .ticker-market em.is-negative { color: #ffd3ca; }
+body .ticker--live .ticker-market em.is-positive { color: #e3f1ec; }
+body .ticker--live .ticker-market em.is-negative { color: #ffd3ca; }
 .button--gold { background: #253c4d; border-color: #253c4d; color: #fff; }
 .button--gold:hover { background: #111c25; border-color: #111c25; color: #fff; }
 
